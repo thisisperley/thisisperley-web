@@ -1,31 +1,32 @@
-# [Band Name]
+# Perley
 
-Welcome to the official website of [Band Name]!
+Welcome to the official web site of Perley!
 
 ## About Us
 
-[Include a brief description of the band, their music style, and any interesting facts.]
+Original obsolete music
 
 ## Music
 
 ### Latest Releases
 
-[Include links to the latest albums or singles]
+[Perley on Bandcamp](https://perley.bandcamp.com/)
+...new music coming in 2024
 
 ### Featured Music Videos
 
-- [YouTube Link 1]
-- [YouTube Link 2]
-- [YouTube Link 3]
+- [Into What's Right](https://youtu.be/lVJpZ1u7jW4)
+- [Zillion Villains](https://youtu.be/2iLri7YCZUc)
+- [Holidark](https://youtu.be/bb-sfQGfWbU)
 
 ## Tour Dates
 
-[Include upcoming tour dates and locations, if applicable.]
+2024 June - Stella, Ontario
 
 ## Contact Us
 
-For bookings and inquiries, please contact us at [email@example.com].
+For bookings and inquiries, please contact us at band@thisisperley.com.
 
-Follow us on [Facebook](https://www.facebook.com/bandname), [Twitter](https://twitter.com/bandname), and [Instagram](https://www.instagram.com/bandname) for updates and behind-the-scenes content.
+Follow us on [YouTube](https://www.youtube.com/@thisisperley), [Instagram](https://www.instagram.com/thisisperley), and [Twitch](https://www.twitch.tv/thisisperley) for updates and behind-the-scenes content.
 
 We appreciate your support!
