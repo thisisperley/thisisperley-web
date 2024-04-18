@@ -11,6 +11,7 @@ Original obsolete music
 ### Latest Releases
 
 [Perley on Bandcamp](https://perley.bandcamp.com/)
+
 ...new music coming in 2024
 
 ### Featured Music Videos
@@ -25,8 +26,8 @@ Original obsolete music
 
 ## Contact Us
 
-For bookings and inquiries, please contact us at band@thisisperley.com.
+For bookings and inquiries, please contact us at <band@thisisperley.com>.
 
-Follow us on [YouTube](https://www.youtube.com/@thisisperley), [Instagram](https://www.instagram.com/thisisperley), and [Twitch](https://www.twitch.tv/thisisperley) for updates and behind-the-scenes content.
+Follow ✨**thisisperley**✨ on [YouTube](https://www.youtube.com/@thisisperley), [Instagram](https://www.instagram.com/thisisperley), and [Twitch](https://www.twitch.tv/thisisperley) for updates and behind-the-scenes content.
 
 We appreciate your support!
