@@ -28,6 +28,6 @@ Perley is a rock band hailing from Toronto, with roots in Barrie, Nova Scotia, A
 
 For bookings and inquiries, please contact us at <band@thisisperley.com>.
 
-Follow ✨**thisisperley**✨ on [YouTube](https://www.youtube.com/@thisisperley), [Instagram](https://www.instagram.com/thisisperley), and [Twitch](https://www.twitch.tv/thisisperley) for updates and behind-the-scenes content.
+Follow ✨**thisisperley**✨ on [YouTube](https://www.youtube.com/@thisisperley), [SoundCloud](https://soundcloud.com/perley-20500321), [Instagram](https://www.instagram.com/thisisperley), and [Twitch](https://www.twitch.tv/thisisperley) for updates and behind-the-scenes content.
 
 We appreciate your support!
