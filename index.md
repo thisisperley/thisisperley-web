@@ -1,6 +1,5 @@
 # Perley
-
-Welcome to the official, AI-enhanced web site of Perley!
+Continuous Original Hits
 
 ## About Us
 
@@ -22,6 +21,7 @@ Perley is a rock band hailing from Toronto, with roots in Barrie, Nova Scotia, A
 
 ## Tour Dates
 
+2025 Stay tuned
 2024 June - Stella, Ontario
 
 ## Contact Us
