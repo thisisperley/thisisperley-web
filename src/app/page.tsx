@@ -9,23 +9,29 @@ export default function Home() {
       <WebsiteJsonLd />
       <MusicGroupJsonLd />
       
-      {/* Hero Section */}
+      {/* Hero Section (fixed background) */}
       <Hero />
       
-      {/* Tour Section */}
-      {/* <TourSection /> */}
-      
-      {/* Music Section */}
-      <MusicSection />
-      
-      {/* About Section */}
-      <AboutSection />
-      
-      {/* Merch Section */}
-      {/* <MerchSection /> */}
-      
-      {/* Footer */}
-      <Footer />
+      {/* Content that scrolls over the hero */}
+      <div className="relative z-10">
+        {/* Add some space at the top to initially show the hero */}
+        <div className="h-screen" />
+        
+        {/* Tour Section */}
+        {/* <TourSection /> */}
+        
+        {/* Music Section */}
+        <MusicSection />
+        
+        {/* About Section */}
+        <AboutSection />
+        
+        {/* Merch Section */}
+        {/* <MerchSection /> */}
+        
+        {/* Footer */}
+        <Footer />
+      </div>
     </>
   );
 }
