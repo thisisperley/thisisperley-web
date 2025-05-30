@@ -5,11 +5,16 @@ export const albums = [
     cover: "/images/perley-single-hold-still.jpg",
     link: "#"
   },
-  // Add more albums as they become available
-  // {
-  //   title: "Midnight Echoes",
-  //   year: "2021",
-  //   cover: "/album2.jpg",
-  //   link: "#"
-  // },
+  {
+    title: "Coming Soon",
+    year: "2025",
+    cover: "/images/perley-single-placeholder-1.jpg",
+    link: "#"
+  },
+  {
+    title: "Coming Soon",
+    year: "2025",
+    cover: "/images/perley-single-placeholder-2.jpg",
+    link: "#"
+  },
 ]; 

@@ -1,6 +1,6 @@
 import { WebsiteJsonLd, MusicGroupJsonLd } from "@/components/seo/JsonLd";
 import { Hero } from "@/components/home/Hero";
-import { MusicSection, TourSection, AboutSection, MerchSection } from "@/components/home/Sections";
+import { MusicSection, VideoSection, TourSection, AboutSection, MerchSection } from "@/components/home/Sections";
 import { Footer } from "@/components/layout/Footer";
 
 export default function Home() {
@@ -22,6 +22,9 @@ export default function Home() {
         
         {/* Music Section */}
         <MusicSection />
+        
+        {/* Video Section */}
+        <VideoSection />
         
         {/* About Section */}
         <AboutSection />
