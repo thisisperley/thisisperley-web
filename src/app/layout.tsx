@@ -14,8 +14,8 @@ export const metadata: Metadata = {
     default: "Perley",
     template: "%s | Perley",
   },
-  description: "Official website of Perley - Experience the sound of legends.",
-  keywords: ["rock band", "music", "concerts", "albums", "perley"],
+  description: "Toronto based Perley fuses indie, shoegaze, punk & prog rock with soulful melodies and hard-hitting percussion.",
+  keywords: ["perley", "Toronto indie band", "indie rock band", "alternative rock", "experimental,", "Canadian indie artists", "shoegaze", "punk"],
   authors: [{ name: "Perley", url: "https://thisisperley.com" }],
   creator: "Perley",
   openGraph: {
@@ -23,14 +23,24 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: "https://thisisperley.com",
     title: "Perley",
-    description: "Official website of Perley - Experience the sound of legends.",
+    description: "Toronto based Perley fuses indie, shoegaze, punk & prog rock with soulful melodies and hard-hitting percussion.",
     siteName: "Perley",
   },
-  twitter: {
-    card: "summary_large_image",
-    title: "Perley",
-    description: "Official website of Perley - Experience the sound of legends.",
-    creator: "@rocklegends",
+  alternates: {
+    canonical: "https://thisisperley.com",
+    types: {
+      "application/rss+xml": "https://thisisperley.com/rss.xml",
+    },
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
+  icons: {
+    icon: "/favicon.ico",
+  },
+  other: {
+    "instagram:username": "@thisisperley",
   },
   metadataBase: new URL("https://thisisperley.com"),
 };

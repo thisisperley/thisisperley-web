@@ -20,36 +20,35 @@ export const MusicGroupJsonLd = () => {
     name: "Perley",
     url: "https://thisisperley.com",
     sameAs: [
-      "https://spotify.com/rocklegends",
-      "https://instagram.com/rocklegends",
-      "https://youtube.com/rocklegends",
-      "https://tiktok.com/rocklegends",
+      "https://spotify.com/perley",
+      "https://instagram.com/thisisperley",
+      "https://youtube.com/@thisisperley",
     ],
-    genre: ["Rock", "Hard Rock", "Alternative Rock"],
-    foundingDate: "2010",
+    genre: ["Indie", "Shoegaze", "Punk", "Prog Rock"],
+    foundingDate: "2017",
     location: {
       "@type": "Place",
-      name: "Los Angeles, CA"
+      name: "Toronto, ON"
     },
     member: [
       {
         "@type": "Person",
-        name: "Alex Smith",
+        name: "David Perley",
         roleName: "Lead Vocals, Guitar"
       },
       {
         "@type": "Person",
-        name: "Jamie Rodriguez",
-        roleName: "Lead Guitar"
+        name: "Ryan MacDonald",
+        roleName: "Synth, Guitar"
       },
       {
         "@type": "Person",
-        name: "Taylor Lee",
+        name: "Patrick Farrell",
         roleName: "Bass Guitar"
       },
       {
         "@type": "Person",
-        name: "Jordan Brown",
+        name: "Tim Miller",
         roleName: "Drums"
       }
     ]
@@ -64,7 +63,7 @@ export const WebsiteJsonLd = () => {
     "@type": "WebSite",
     name: "Perley",
     url: "https://thisisperley.com",
-    description: "Official website of Perley - Experience the sound of legends.",
+    description: "Toronto based Perley fuses indie, shoegaze, punk & prog rock with soulful melodies and hard-hitting percussion.",
     potentialAction: {
       "@type": "SearchAction",
       target: "https://thisisperley.com/search?q={search_term_string}",

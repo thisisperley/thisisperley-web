@@ -6,8 +6,8 @@ export const defaultMetadata: Metadata = {
     default: "This Is Perley",
     template: "%s | This Is Perley",
   },
-  description: "Perley's personal website and portfolio.",
-  keywords: ["perley", "portfolio", "developer", "designer", "creative"],
+  description: "Toronto based Perley fuses indie, shoegaze, punk & prog rock with soulful melodies and hard-hitting percussion.",
+  keywords: ["perley", "Toronto indie band", "indie rock band", "alternative rock", "experimental,", "Canadian indie artists", "shoegaze", "punk"],
   authors: [{ name: "Perley", url: "https://thisisperley.com" }],
   creator: "Perley",
   openGraph: {
@@ -15,11 +15,11 @@ export const defaultMetadata: Metadata = {
     locale: "en_US",
     url: "https://thisisperley.com",
     title: "This Is Perley",
-    description: "Perley's personal website and portfolio.",
+    description: "Toronto based Perley fuses indie, shoegaze, punk & prog rock with soulful melodies and hard-hitting percussion.",
     siteName: "This Is Perley",
     images: [
       {
-        url: "https://thisisperley.com/og-image.jpg",
+        url: "https://thisisperley.com/og-perley.jpg",
         width: 1200,
         height: 630,
         alt: "This Is Perley",
@@ -29,9 +29,9 @@ export const defaultMetadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "This Is Perley",
-    description: "Perley's personal website and portfolio.",
+    description: "Toronto based Perley fuses indie, shoegaze, punk & prog rock with soulful melodies and hard-hitting percussion.",
     creator: "@thisisperley",
-    images: ["https://thisisperley.com/twitter-image.jpg"],
+    images: ["https://thisisperley.com/og-perley.jpg"],
   },
   metadataBase: new URL("https://thisisperley.com"),
 };
@@ -49,7 +49,7 @@ export function createMetadata({
   ogImage?: string;
 }): Metadata {
   const url = path ? `https://thisisperley.com${path}` : "https://thisisperley.com";
-  const ogImageUrl = ogImage || "https://thisisperley.com/og-image.jpg";
+  const ogImageUrl = ogImage || "https://thisisperley.com/og-perley.jpg";
   
   return {
     title: title,

@@ -6,7 +6,7 @@ export default function manifest(): MetadataRoute.Manifest {
   return {
     name: "Perley",
     short_name: "Perley",
-    description: "Official website of Perley - Experience the sound of legends.",
+    description: "Toronto based Perley fuses indie, shoegaze, punk & prog rock with soulful melodies and hard-hitting percussion.",
     start_url: "/",
     display: "standalone",
     background_color: "#000000",
