@@ -20,7 +20,7 @@ export const MusicGroupJsonLd = () => {
     name: "Perley",
     url: "https://thisisperley.com",
     sameAs: [
-      "https://spotify.com/perley",
+      "https://open.spotify.com/artist/1hvgxRmVGMuZ8mRjT0yLcP",
       "https://instagram.com/thisisperley",
       "https://youtube.com/@thisisperley",
     ],
@@ -64,11 +64,6 @@ export const WebsiteJsonLd = () => {
     name: "Perley",
     url: "https://thisisperley.com",
     description: "Toronto based Perley fuses indie, shoegaze, punk & prog rock with soulful melodies and hard-hitting percussion.",
-    potentialAction: {
-      "@type": "SearchAction",
-      target: "https://thisisperley.com/search?q={search_term_string}",
-      "query-input": "required name=search_term_string",
-    },
   };
 
   return <JsonLd data={data} />;

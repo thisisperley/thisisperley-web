@@ -3,32 +3,32 @@ import { Metadata } from "next";
 // Define default metadata for the site
 export const defaultMetadata: Metadata = {
   title: {
-    default: "This Is Perley",
-    template: "%s | This Is Perley",
+    default: "Perley",
+    template: "%s | Perley",
   },
   description: "Toronto based Perley fuses indie, shoegaze, punk & prog rock with soulful melodies and hard-hitting percussion.",
-  keywords: ["perley", "Toronto indie band", "indie rock band", "alternative rock", "experimental,", "Canadian indie artists", "shoegaze", "punk"],
+  keywords: ["perley", "Toronto indie band", "indie rock band", "alternative rock", "experimental", "Canadian indie artists", "shoegaze", "punk"],
   authors: [{ name: "Perley", url: "https://thisisperley.com" }],
   creator: "Perley",
   openGraph: {
     type: "website",
     locale: "en_US",
     url: "https://thisisperley.com",
-    title: "This Is Perley",
+    title: "Perley",
     description: "Toronto based Perley fuses indie, shoegaze, punk & prog rock with soulful melodies and hard-hitting percussion.",
-    siteName: "This Is Perley",
+    siteName: "Perley",
     images: [
       {
         url: "https://thisisperley.com/og-perley.jpg",
         width: 1200,
         height: 630,
-        alt: "This Is Perley",
+        alt: "Perley",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "This Is Perley",
+    title: "Perley",
     description: "Toronto based Perley fuses indie, shoegaze, punk & prog rock with soulful melodies and hard-hitting percussion.",
     creator: "@thisisperley",
     images: ["https://thisisperley.com/og-perley.jpg"],
@@ -64,7 +64,7 @@ export function createMetadata({
           url: ogImageUrl,
           width: 1200,
           height: 630,
-          alt: title || "This Is Perley",
+          alt: title || "Perley",
         },
       ],
     },

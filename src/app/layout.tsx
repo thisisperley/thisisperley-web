@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     template: "%s | Perley",
   },
   description: "Toronto based Perley fuses indie, shoegaze, punk & prog rock with soulful melodies and hard-hitting percussion.",
-  keywords: ["perley", "Toronto indie band", "indie rock band", "alternative rock", "experimental,", "Canadian indie artists", "shoegaze", "punk"],
+  keywords: ["perley", "Toronto indie band", "indie rock band", "alternative rock", "experimental", "Canadian indie artists", "shoegaze", "punk"],
   authors: [{ name: "Perley", url: "https://thisisperley.com" }],
   creator: "Perley",
   openGraph: {
@@ -25,6 +25,14 @@ export const metadata: Metadata = {
     title: "Perley",
     description: "Toronto based Perley fuses indie, shoegaze, punk & prog rock with soulful melodies and hard-hitting percussion.",
     siteName: "Perley",
+    images: [
+      {
+        url: "https://thisisperley.com/og-perley.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Perley",
+      },
+    ],
   },
   alternates: {
     canonical: "https://thisisperley.com",
@@ -38,6 +46,13 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: "/favicon.ico",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Perley",
+    description: "Toronto based Perley fuses indie, shoegaze, punk & prog rock with soulful melodies and hard-hitting percussion.",
+    creator: "@thisisperley",
+    images: ["https://thisisperley.com/og-perley.jpg"],
   },
   other: {
     "instagram:username": "@thisisperley",
