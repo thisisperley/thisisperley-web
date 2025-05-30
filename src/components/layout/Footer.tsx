@@ -52,7 +52,7 @@ export const Footer = () => {
     <footer className="bg-black text-white py-16">
       <div className="container mx-auto px-4">
         <div className="flex flex-col items-center">
-          <h2 className="text-3xl font-bold mb-8 tracking-wide">ROCK LEGENDS</h2>
+          <h2 className="text-3xl font-bold mb-8 tracking-wide">perley</h2>
           
           <div className="flex space-x-8 mb-8">
             {socialLinks.map((item) => (
@@ -71,13 +71,13 @@ export const Footer = () => {
             ))}
           </div>
           
-          <div className="text-center text-gray-400 max-w-xl">
+          {/* <div className="text-center text-gray-400 max-w-xl">
             <p className="mb-2">For booking inquiries: booking@rocklegends.com</p>
             <p className="mb-8">Subscribe to our newsletter for tour updates and exclusive content</p>
-          </div>
+          </div> */}
           
           <p className="text-sm text-gray-600">
-            &copy; {currentYear} Rock Legends. All rights reserved.
+            &copy; {currentYear} This Is Perley. All rights reserved.
           </p>
         </div>
       </div>

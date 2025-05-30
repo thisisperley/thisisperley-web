@@ -13,7 +13,7 @@ export default function Home() {
       <Hero />
       
       {/* Tour Section */}
-      <TourSection />
+      {/* <TourSection /> */}
       
       {/* Music Section */}
       <MusicSection />
@@ -22,7 +22,7 @@ export default function Home() {
       <AboutSection />
       
       {/* Merch Section */}
-      <MerchSection />
+      {/* <MerchSection /> */}
       
       {/* Footer */}
       <Footer />

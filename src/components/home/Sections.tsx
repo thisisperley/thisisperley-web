@@ -138,21 +138,24 @@ export const AboutSection = () => {
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           <div>
-            <h2 className="text-4xl md:text-5xl font-bold mb-8">THE BAND</h2>
+            {/* <h2 className="text-4xl md:text-5xl font-bold mb-8">THE BAND</h2> */}
             <p className="text-xl text-gray-300 mb-6">
-              Rock Legends formed in 2010 and quickly rose to prominence with their energetic live performances and authentic sound that captures the essence of classic rock while pushing boundaries with modern influences.
+            Perley is a rock band hailing from Toronto, with roots in Barrie, Nova Scotia, Alberta and California. Starting in 2017, the band grew out of jam sessions to explore singer-songwriter David Perley's original compositions. 
             </p>
             <p className="text-xl text-gray-300 mb-8">
-              With five studio albums and multiple world tours, the band continues to electrify audiences across the globe with their signature sound and unforgettable stage presence.
+            This group of music lovers/buffs includes Ryan MacDonald on guitar and synthesizer, Tim Miller on drums, Pat Farrell on bass, and Dave on vocals and guitar. Perley pairs soulful melodies and lyrics with sophisticated and hard rocking percussion, conjuring the atmospheres and tones of indie, shoegaze, punk and progressive rock. Perley has performed at locations in Toronto and Stella, Ontario.
             </p>
-            <Button className="bg-red-600 hover:bg-red-700">
+            {/* <Button className="bg-red-600 hover:bg-red-700">
               <a href="#" className="text-white px-6 py-3">READ FULL BIO</a>
-            </Button>
+            </Button> */}
           </div>
           <div className="relative h-[500px] rounded-lg overflow-hidden">
-            <div className="absolute inset-0 bg-gradient-to-r from-red-600/30 to-blue-600/30 flex items-center justify-center">
-              <span className="text-white font-medium">Band Photo</span>
-            </div>
+            <img 
+              src="/images/perley-band.jpg" 
+              alt="Perley Band" 
+              className="absolute inset-0 w-full h-full object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-r from-red-600/20 to-blue-600/20"></div>
           </div>
         </div>
       </div>
