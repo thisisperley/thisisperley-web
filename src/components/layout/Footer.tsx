@@ -49,14 +49,19 @@ export const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-[#232323] text-white py-16">
-      <div className="container mx-auto px-4">
+    <footer 
+      className="relative bg-no-repeat bg-cover bg-center min-h-[300px] text-white"
+      style={{ 
+        backgroundImage: "url('/images/footer.png')"
+      }}
+    >
+      {/* Content */}
+      <div className="container mx-auto px-4 py-16 relative">
         <div className="flex flex-col items-center">
-          <h2 className="text-3xl font-bold mb-8 tracking-wide">perley</h2>
+          <h2 className="inline-block text-3xl font-bold mb-8 tracking-wide bg-[#232323] px-4 py-2">perley</h2>
           
-          <div className="text-center text-gray-400 max-w-xl mb-8">
-            <p className="mb-2">a rockin' band of the highest order pretty much.</p>
-            {/* <p className="mb-8">Subscribe to our newsletter for tour updates and exclusive content</p> */}
+          <div className="text-center text-white max-w-xl mb-8">
+            <p className="inline-block mb-2 bg-[#232323] px-3 py-1">a rockin' band of the highest order pretty much.</p>
           </div>
 
           <div className="flex space-x-8 mb-8">
@@ -64,7 +69,7 @@ export const Footer = () => {
               <a 
                 key={item.name} 
                 href={item.href} 
-                className="text-gray-400 hover:text-red-500 transition-colors duration-300" 
+                className="text-white bg-[#232323] p-2 rounded-full hover:text-red-500 transition-colors duration-300" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 aria-label={`Visit ${item.name}`}
@@ -81,7 +86,7 @@ export const Footer = () => {
             <p className="mb-8">Subscribe to our newsletter for tour updates and exclusive content</p>
           </div> */}
           
-          <p className="text-sm text-gray-600">
+          <p className="text-sm text-white bg-[#232323] px-3 py-1">
             &copy; {currentYear} This Is Perley. All rights reserved.
           </p>
         </div>
