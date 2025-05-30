@@ -49,7 +49,7 @@ export const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-black text-white py-16">
+    <footer className="bg-[#232323] text-white py-16">
       <div className="container mx-auto px-4">
         <div className="flex flex-col items-center">
           <h2 className="text-3xl font-bold mb-8 tracking-wide">perley</h2>

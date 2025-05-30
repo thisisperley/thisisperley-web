@@ -5,7 +5,7 @@ import { aboutContent } from "@/data/aboutData";
 
 export const AboutSection = () => {
   return (
-    <section className="py-24 bg-gray-900 text-white">
+    <section className="py-24 bg-[#232323] text-white">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           <div>

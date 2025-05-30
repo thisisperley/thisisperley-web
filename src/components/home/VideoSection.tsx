@@ -34,7 +34,7 @@ export const VideoSection = () => {
   };
 
   return (
-    <section id="videos" className="py-24 bg-[#1a1a1a] text-white">
+    <section id="videos" className="py-24 bg-[#232323] text-white">
       <div className="container mx-auto px-4">
         {/* <h2 className="text-4xl md:text-5xl font-bold text-center mb-16">VIDEOS</h2> */}
         

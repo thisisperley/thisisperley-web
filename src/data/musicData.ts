@@ -6,13 +6,13 @@ export const albums = [
     link: "#"
   },
   {
-    title: "Coming Soon",
+    title: "Unknown #1",
     year: "2025",
     cover: "/images/perley-single-placeholder-1.jpg",
     link: "#"
   },
   {
-    title: "Coming Soon",
+    title: "Unknown #2",
     year: "2025",
     cover: "/images/perley-single-placeholder-2.jpg",
     link: "#"
