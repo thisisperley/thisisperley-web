@@ -52,15 +52,15 @@ const BlobEffect = ({
     document.documentElement.style.setProperty("--mouse-y", "50%");
 
     // Simple throttling function
-    const throttle = (func: Function, delay: number) => {
+    const throttle = <T extends (...args: any[]) => void>(func: T, delay: number) => {
       let lastCall = 0;
-      return function (...args: any[]) {
+      return function(this: any, ...args: Parameters<T>) {
         const now = new Date().getTime();
         if (now - lastCall < delay) {
           return;
         }
         lastCall = now;
-        return func(...args);
+        return func.apply(this, args);
       };
     };
 

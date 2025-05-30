@@ -1,6 +1,6 @@
 import { WebsiteJsonLd, MusicGroupJsonLd } from "@/components/seo/JsonLd";
 import { Hero } from "@/components/home/Hero";
-import { MusicSection, VideoSection, TourSection, AboutSection, MerchSection } from "@/components/home/Sections";
+import { MusicSection, VideoSection, AboutSection } from "@/components/home/Sections";
 import { Footer } from "@/components/layout/Footer";
 
 export default function Home() {
@@ -17,9 +17,6 @@ export default function Home() {
         {/* Add some space at the top to initially show the hero */}
         <div className="h-screen" />
         
-        {/* Tour Section */}
-        {/* <TourSection /> */}
-        
         {/* Music Section */}
         <MusicSection />
         
@@ -28,9 +25,6 @@ export default function Home() {
         
         {/* About Section */}
         <AboutSection />
-        
-        {/* Merch Section */}
-        {/* <MerchSection /> */}
         
         {/* Footer */}
         <Footer />

@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from 'react';
-import { Video, videos } from '@/data/videos';
+import { videos } from '@/data/videos';
 
 export const VideoSection = () => {
   const [isPlaying, setIsPlaying] = useState<boolean>(false);

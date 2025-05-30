@@ -58,7 +58,7 @@ export const Footer = () => {
           <h2 className="inline-block text-3xl font-bold mb-8 tracking-wide bg-[#232323] px-4 py-2">perley</h2>
           
           <div className="text-center text-white max-w-xl mb-8">
-            <p className="inline-block mb-2 bg-[#232323] px-3 py-1">A rockin' band of the highest order pretty much. ™</p>
+            <p className="inline-block mb-2 bg-[#232323] px-3 py-1">A rockin&apos; band of the highest order pretty much. ™</p>
           </div>
 
           <div className="flex space-x-8 mb-8">
