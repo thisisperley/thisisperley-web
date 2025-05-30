@@ -7,9 +7,9 @@ export const Hero = () => {
       <div 
         className="absolute inset-0 bg-cover bg-center z-0" 
         style={{ 
-          backgroundImage: "url('/images/perley-web-header.jpg')", 
+          backgroundImage: "url('/images/perley-web-header-v2.jpg')", 
           backgroundPosition: "center",
-          filter: "brightness(0.5)"
+          filter: "brightness(1)"
         }}
       />
       

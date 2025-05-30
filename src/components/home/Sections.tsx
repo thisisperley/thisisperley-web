@@ -5,37 +5,39 @@ import { Button } from "@/components/ui/Button";
 export const MusicSection = () => {
   const albums = [
     {
-      title: "Electrified",
-      year: "2023",
-      cover: "/album1.jpg",
+      title: "Hold Still",
+      year: "2025",
+      cover: "/images/perley-single-hold-still.jpg",
       link: "#"
     },
-    {
-      title: "Midnight Echoes",
-      year: "2021",
-      cover: "/album2.jpg",
-      link: "#"
-    },
-    {
-      title: "Raging Fire",
-      year: "2018",
-      cover: "/album3.jpg",
-      link: "#"
-    }
+    // {
+    //   title: "Midnight Echoes",
+    //   year: "2021",
+    //   cover: "/album2.jpg",
+    //   link: "#"
+    // },
+    // {
+    //   title: "Raging Fire",
+    //   year: "2018",
+    //   cover: "/album3.jpg",
+    //   link: "#"
+    // }
   ];
 
   return (
-    <section id="music" className="py-24 bg-black text-white">
+    <section id="music" className="py-24 bg-[#232323] text-white">
       <div className="container mx-auto px-4">
-        <h2 className="text-4xl md:text-5xl font-bold text-center mb-16">LATEST RELEASES</h2>
+        {/* <h2 className="text-4xl md:text-5xl font-bold text-center mb-16">LATEST RELEASES</h2> */}
         
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {albums.map((album) => (
             <div key={album.title} className="bg-gray-900 rounded-lg overflow-hidden group hover:bg-gray-800 transition-colors duration-300">
               <div className="aspect-square relative overflow-hidden">
-                <div className="absolute inset-0 bg-red-600/20 flex items-center justify-center z-10">
-                  <span className="text-white font-medium">Album Cover</span>
-                </div>
+                <img 
+                  src={album.cover}
+                  alt={album.title}
+                  className="absolute inset-0 w-full h-full object-cover"
+                />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity z-20 flex items-end justify-center pb-6">
                   <Button className="bg-red-600 hover:bg-red-700">
                     <a href={album.link} className="text-white px-4 py-2">Listen Now</a>
@@ -51,9 +53,9 @@ export const MusicSection = () => {
         </div>
         
         <div className="mt-16 text-center">
-          <Button size="lg" className="bg-red-600 hover:bg-red-700">
+          {/* <Button size="lg" className="bg-red-600 hover:bg-red-700">
             <a href="#" className="text-white px-6 py-3 text-lg">VIEW ALL MUSIC</a>
-          </Button>
+          </Button> */}
         </div>
       </div>
     </section>
@@ -143,13 +145,17 @@ export const AboutSection = () => {
             Perley is a rock band hailing from Toronto, with roots in Barrie, Nova Scotia, Alberta and California. Starting in 2017, the band grew out of jam sessions to explore singer-songwriter David Perley's original compositions. 
             </p>
             <p className="text-xl text-gray-300 mb-8">
-            This group of music lovers/buffs includes Ryan MacDonald on guitar and synthesizer, Tim Miller on drums, Pat Farrell on bass, and Dave on vocals and guitar. Perley pairs soulful melodies and lyrics with sophisticated and hard rocking percussion, conjuring the atmospheres and tones of indie, shoegaze, punk and progressive rock. Perley has performed at locations in Toronto and Stella, Ontario.
+            This group of music lovers/buffs includes Ryan MacDonald on guitar and synthesizer, Tim Miller on drums, Pat Farrell on bass, and Dave on vocals and guitar. 
             </p>
+            <p className="text-xl text-gray-300 mb-8">
+            Perley pairs soulful melodies and lyrics with sophisticated and hard rocking percussion, conjuring the atmospheres and tones of indie, shoegaze, punk and progressive rock. Perley has performed at locations in Toronto and Stella, Ontario.
+            </p>
+
             {/* <Button className="bg-red-600 hover:bg-red-700">
               <a href="#" className="text-white px-6 py-3">READ FULL BIO</a>
             </Button> */}
           </div>
-          <div className="relative h-[500px] rounded-lg overflow-hidden">
+          <div className="relative h-[375px] w-[75%] rounded-lg overflow-hidden mx-auto">
             <img 
               src="/images/perley-band.jpg" 
               alt="Perley Band" 

@@ -54,6 +54,11 @@ export const Footer = () => {
         <div className="flex flex-col items-center">
           <h2 className="text-3xl font-bold mb-8 tracking-wide">perley</h2>
           
+          <div className="text-center text-gray-400 max-w-xl mb-8">
+            <p className="mb-2">a rockin' band of the highest order pretty much.</p>
+            {/* <p className="mb-8">Subscribe to our newsletter for tour updates and exclusive content</p> */}
+          </div>
+
           <div className="flex space-x-8 mb-8">
             {socialLinks.map((item) => (
               <a 
