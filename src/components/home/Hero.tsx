@@ -2,7 +2,6 @@
 import { useState, useEffect, useRef } from "react";
 
 export const Hero = () => {
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [frames, setFrames] = useState<Array<{
     id: number;
     frameIndex: number;
@@ -10,18 +9,16 @@ export const Hero = () => {
     y: number;
   }>>([]);
   const [frameIndex, setFrameIndex] = useState(1);
-  const lastFrameTimeRef = useRef<number>(0);
   const throttlingRef = useRef<boolean>(false);
   
   // Constants
-  const FRAME_INTERVAL_MS = 100; // Create a frame every 500ms
-  const FRAME_DURATION_MS = 1000; // Each frame stays visible for 1000ms
+  const FRAME_INTERVAL_MS = 300;
+  const FRAME_DURATION_MS = 1000;
   const TOTAL_FRAMES = 7;
+  const FRAME_SIZE = 250; // Increased from 100px to 150px (50% larger)
   
   // Initialize mouse tracking
   useEffect(() => {
-    console.log("Initializing document mouse tracking with proper throttling");
-    
     // Create a new frame at the current mouse position
     const createNewFrame = (x: number, y: number) => {
       // Skip if we're currently throttling
@@ -57,11 +54,7 @@ export const Hero = () => {
     
     // Mouse move handler
     const handleMouseMove = (e: MouseEvent) => {
-      const x = e.clientX;
-      const y = e.clientY;
-      
-      setMousePosition({ x, y });
-      createNewFrame(x, y);
+      createNewFrame(e.clientX, e.clientY);
     };
     
     // Add document-level event listener
@@ -84,26 +77,16 @@ export const Hero = () => {
         }}
       />
       
-      {/* Mouse position indicator */}
-      <div
-        className="fixed w-10 h-10 rounded-full bg-red-500 pointer-events-none"
-        style={{
-          left: `${mousePosition.x - 5}px`,
-          top: `${mousePosition.y - 5}px`,
-          zIndex: 50
-        }}
-      />
-      
       {/* Frames that follow the mouse */}
       {frames.map(frame => (
         <div 
           key={frame.id}
           className="fixed pointer-events-none"
           style={{
-            left: `${frame.x - 50}px`,
-            top: `${frame.y - 50}px`,
-            width: "100px",
-            height: "100px",
+            left: `${frame.x - FRAME_SIZE/2}px`,
+            top: `${frame.y - FRAME_SIZE/2}px`,
+            width: `${FRAME_SIZE}px`,
+            height: `${FRAME_SIZE}px`,
             zIndex: 40
           }}
         >
@@ -114,11 +97,6 @@ export const Hero = () => {
           />
         </div>
       ))}
-      
-      {/* Debug info */}
-      <div className="fixed top-0 left-0 bg-white p-2 text-black z-50">
-        Mouse: ({mousePosition.x}, {mousePosition.y}) | Frames: {frames.length}
-      </div>
       
       {/* Hidden heading for SEO */}
       <h1 className="sr-only">PERLEY</h1>
