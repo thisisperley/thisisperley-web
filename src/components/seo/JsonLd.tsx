@@ -17,8 +17,8 @@ export const MusicGroupJsonLd = () => {
   const data = {
     "@context": "https://schema.org",
     "@type": "MusicGroup",
-    name: "Rock Legends",
-    url: "https://rocklegends.com",
+    name: "Perley",
+    url: "https://thisisperley.com",
     sameAs: [
       "https://spotify.com/rocklegends",
       "https://instagram.com/rocklegends",
@@ -62,12 +62,12 @@ export const WebsiteJsonLd = () => {
   const data = {
     "@context": "https://schema.org",
     "@type": "WebSite",
-    name: "Rock Legends",
-    url: "https://rocklegends.com",
-    description: "Official website of Rock Legends - Experience the sound of legends.",
+    name: "Perley",
+    url: "https://thisisperley.com",
+    description: "Official website of Perley - Experience the sound of legends.",
     potentialAction: {
       "@type": "SearchAction",
-      target: "https://rocklegends.com/search?q={search_term_string}",
+      target: "https://thisisperley.com/search?q={search_term_string}",
       "query-input": "required name=search_term_string",
     },
   };
@@ -92,8 +92,8 @@ export const WebPageJsonLd = ({
     url: url,
     isPartOf: {
       "@type": "WebSite",
-      name: "Rock Legends",
-      url: "https://rocklegends.com",
+      name: "Perley",
+      url: "https://thisisperley.com",
     },
   };
 
@@ -118,8 +118,8 @@ export const MusicAlbumJsonLd = ({
     image: image,
     byArtist: {
       "@type": "MusicGroup",
-      name: "Rock Legends",
-      url: "https://rocklegends.com",
+      name: "Perley",
+      url: "https://thisisperley.com",
     },
     numTracks: numTracks,
     datePublished: releaseDate,

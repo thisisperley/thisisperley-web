@@ -4,9 +4,9 @@ export const dynamic = "force-static";
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: "Rock Legends",
-    short_name: "Rock Legends",
-    description: "Official website of Rock Legends - Experience the sound of legends.",
+    name: "Perley",
+    short_name: "Perley",
+    description: "Official website of Perley - Experience the sound of legends.",
     start_url: "/",
     display: "standalone",
     background_color: "#000000",

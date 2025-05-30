@@ -11,28 +11,28 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: {
-    default: "Rock Legends",
-    template: "%s | Rock Legends",
+    default: "Perley",
+    template: "%s | Perley",
   },
-  description: "Official website of Rock Legends - Experience the sound of legends.",
-  keywords: ["rock band", "music", "concerts", "albums", "rock legends"],
-  authors: [{ name: "Rock Legends", url: "https://rocklegends.com" }],
-  creator: "Rock Legends",
+  description: "Official website of Perley - Experience the sound of legends.",
+  keywords: ["rock band", "music", "concerts", "albums", "perley"],
+  authors: [{ name: "Perley", url: "https://thisisperley.com" }],
+  creator: "Perley",
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://rocklegends.com",
-    title: "Rock Legends",
-    description: "Official website of Rock Legends - Experience the sound of legends.",
-    siteName: "Rock Legends",
+    url: "https://thisisperley.com",
+    title: "Perley",
+    description: "Official website of Perley - Experience the sound of legends.",
+    siteName: "Perley",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Rock Legends",
-    description: "Official website of Rock Legends - Experience the sound of legends.",
+    title: "Perley",
+    description: "Official website of Perley - Experience the sound of legends.",
     creator: "@rocklegends",
   },
-  metadataBase: new URL("https://rocklegends.com"),
+  metadataBase: new URL("https://thisisperley.com"),
 };
 
 export const viewport: Viewport = {

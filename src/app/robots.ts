@@ -9,6 +9,6 @@ export default function robots(): MetadataRoute.Robots {
       allow: "/",
       disallow: ["/private/", "/api/"],
     },
-    sitemap: "https://rocklegends.com/sitemap.xml",
+    sitemap: "https://thisisperley.com/sitemap.xml",
   };
 } 

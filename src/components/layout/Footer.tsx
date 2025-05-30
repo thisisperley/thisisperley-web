@@ -77,7 +77,7 @@ export const Footer = () => {
           </div>
           
           {/* <div className="text-center text-gray-400 max-w-xl">
-            <p className="mb-2">For booking inquiries: booking@rocklegends.com</p>
+            <p className="mb-2">For booking inquiries: booking@thisisperley.com</p>
             <p className="mb-8">Subscribe to our newsletter for tour updates and exclusive content</p>
           </div> */}
           
