@@ -1,6 +1,6 @@
 # This Is Perley - Portfolio Website
 
-A modern, performant, and SEO-optimized Next.js portfolio website for Perley, showcasing projects, skills, and creative work.
+A modern, performant, and SEO-optimized Next.js website for the Toronto based indie rock band Perley.
 
 ## Features
 
@@ -139,6 +139,4 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 ## Acknowledgments
 
-- Next.js team for the amazing framework
-- Vercel for hosting and deployment solutions
-- TailwindCSS for the utility-first CSS framework
+- Developed by [@rocket5](https://github.com/rocket5) of [Rocket 5 Studios](https://rocket5studios.com/)
