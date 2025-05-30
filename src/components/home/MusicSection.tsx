@@ -5,7 +5,7 @@ import { albums } from "@/data/musicData";
 
 export const MusicSection = () => {
   return (
-    <section id="music" className="py-24 bg-[#232323] text-white">
+    <section id="music" className="py-24 text-white">
       <div className="container mx-auto px-4">
         {/* <h2 className="text-4xl md:text-5xl font-bold text-center mb-16">LATEST RELEASES</h2> */}
         
