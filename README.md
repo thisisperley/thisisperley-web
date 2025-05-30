@@ -11,6 +11,7 @@ A modern, performant, and SEO-optimized Next.js portfolio website for Perley, sh
 - **Themeable**: Built-in theme system with 3 custom themes
 - **Accessible**: Semantic HTML, ARIA attributes, keyboard navigation support
 - **CI/CD**: Automated deployment via GitHub Actions
+- **Interactive UI**: Mouse-following blob effect for enhanced visual experience
 
 ## Getting Started
 
@@ -70,6 +71,41 @@ The website includes three built-in themes:
 - **Theme C**: Purple-based color scheme
 
 You can customize the themes by editing the CSS variables in `src/app/globals.css`.
+
+### Mouse-following Blob Effect
+
+The website includes an interactive blob effect that follows the user's mouse cursor. This effect is implemented in the `BlobEffect` component and can be customized with the following properties:
+
+#### Basic Usage
+
+The BlobEffect component is implemented in `src/components/layout/ClientThemeLayout.tsx`:
+
+```tsx
+<BlobEffect 
+  blobColors={{
+    blob1: "rgba(120, 0, 255, 0.3), rgba(0, 128, 255, 0.3), rgba(128, 255, 0, 0.3)",
+    blob2: "rgba(255, 140, 0, 0.3), rgba(255, 0, 255, 0.3), rgba(0, 255, 255, 0.3)",
+    blob3: "rgba(0, 255, 255, 0.3), rgba(255, 255, 0, 0.3), rgba(0, 255, 0, 0.3)"
+  }}
+  blurAmount={{
+    blob1: 120,
+    blob2: 100,
+    blob3: 80
+  }}
+/>
+```
+
+#### Customization Options
+
+- **blobColors**: Define the gradient colors for each of the three blobs
+- **blurAmount**: Set the blur intensity for each blob (in pixels)
+- **sizes**: Adjust the size of each blob (in pixels)
+- **throttleAmount**: Control the performance vs. smoothness of the mouse tracking (in milliseconds)
+- **className**: Add additional CSS classes to the container element
+
+#### Disabling the Effect
+
+To disable the blob effect, simply remove or comment out the `<BlobEffect />` component in `src/components/layout/ClientThemeLayout.tsx`.
 
 ### Content
 

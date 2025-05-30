@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pure CSS Blob Effect</title>
+    <style>
+        :root {
+            --mouse-x: 50%;
+            --mouse-y: 50%;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            min-height: 100vh;
+            background: #0f0f13;
+            color: white;
+            font-family: system-ui, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .content {
+            position: relative;
+            z-index: 10;
+            text-align: center;
+            line-height: 1.6;
+            padding: 2rem;
+            border-radius: 1rem;
+            background-color: rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+        }
+        
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+        }
+        
+        p {
+            font-size: 1.2rem;
+            opacity: 0.8;
+        }
+        
+        .blob-container {
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            z-index: 1;
+        }
+        
+        .blob {
+            position: absolute;
+            width: 400px;
+            height: 400px;
+            left: var(--mouse-x);
+            top: var(--mouse-y);
+            translate: -50% -50%;
+            background: linear-gradient(45deg, 
+                rgba(255, 0, 128, 0.6), 
+                rgba(0, 128, 255, 0.6), 
+                rgba(128, 255, 0, 0.6));
+            border-radius: 50%;
+            filter: blur(100px);
+            pointer-events: none;
+            mix-blend-mode: screen;
+            animation: morph 8s ease-in-out infinite;
+            transition: left 0.6s cubic-bezier(0.22, 1, 0.36, 1), 
+                        top 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+        
+        .blob:nth-child(2) {
+            width: 300px;
+            height: 300px;
+            background: linear-gradient(45deg, 
+                rgba(255, 140, 0, 0.5), 
+                rgba(255, 0, 255, 0.5), 
+                rgba(0, 255, 255, 0.5));
+            filter: blur(80px);
+            animation-delay: -2s;
+            transition: left 1s cubic-bezier(0.22, 1, 0.36, 1), 
+                        top 1s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+        
+        .blob:nth-child(3) {
+            width: 200px;
+            height: 200px;
+            background: linear-gradient(45deg, 
+                rgba(0, 255, 255, 0.5), 
+                rgba(255, 255, 0, 0.5), 
+                rgba(0, 255, 0, 0.5));
+            filter: blur(60px);
+            animation-delay: -4s;
+            transition: left 1.4s cubic-bezier(0.22, 1, 0.36, 1), 
+                        top 1.4s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+        
+        @keyframes morph {
+            0% {
+                border-radius: 48% 52% 57% 43% / 44% 57% 43% 56%;
+            }
+            25% {
+                border-radius: 63% 37% 57% 43% / 55% 48% 52% 45%;
+            }
+            50% {
+                border-radius: 40% 60% 43% 57% / 52% 32% 68% 48%;
+            }
+            75% {
+                border-radius: 54% 46% 38% 62% / 49% 70% 30% 51%;
+            }
+            100% {
+                border-radius: 48% 52% 57% 43% / 44% 57% 43% 56%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="blob-container">
+        <div class="blob"></div>
+        <div class="blob"></div>
+        <div class="blob"></div>
+    </div>
+    
+    <div class="content">
+        <h1>Glowy Blob Effect</h1>
+        <p>Move your mouse to see the colorful blobs follow</p>
+    </div>
+    
+    <script>
+        // Simple throttling function
+        function throttle(func, delay) {
+            let lastCall = 0;
+            return function(...args) {
+                const now = new Date().getTime();
+                if (now - lastCall < delay) {
+                    return;
+                }
+                lastCall = now;
+                return func(...args);
+            }
+        }
+        
+        // Update CSS custom properties for mouse position
+        const handleMouseMove = throttle(function(event) {
+            document.documentElement.style.setProperty('--mouse-x', `${event.clientX}px`);
+            document.documentElement.style.setProperty('--mouse-y', `${event.clientY}px`);
+        }, 10);
+        
+        document.addEventListener('mousemove', handleMouseMove);
+        
+        // Add hue rotation for extra color effect
+        document.querySelectorAll('.blob').forEach((blob, index) => {
+            blob.style.animation = `morph 8s ease-in-out infinite, hue-rotate ${10 + index * 2}s linear infinite`;
+        });
+        
+        // Add keyframes for hue rotation
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes hue-rotate {
+                0% { filter: blur(${60 + 20 * 1}px) hue-rotate(0deg); }
+                50% { filter: blur(${50 + 20 * 1}px) hue-rotate(180deg); }
+                100% { filter: blur(${60 + 20 * 1}px) hue-rotate(360deg); }
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+</body>
+</html> 
