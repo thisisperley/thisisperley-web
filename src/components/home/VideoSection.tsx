@@ -1,23 +1,12 @@
 "use client";
 
 import { useState } from 'react';
-
-type Video = {
-  id: string;
-  title: string;
-};
-
-const videos: Video[] = [
-  { id: '8OzA3q4BETk', title: 'Perley Video' },
-  { id: 'bb-sfQGfWbU', title: 'Perley Video' },
-  { id: 'D6JqxFCIICs', title: 'Perley Video' },
-  { id: 'v_CipXgtQEs', title: 'Perley Video' },
-  { id: '2iLri7YCZUc', title: 'Perley Video' },
-  { id: 'lVJpZ1u7jW4', title: 'Perley Video' },
-];
+import { Video, videos } from '@/data/videos';
 
 export const VideoSection = () => {
   const [selectedVideo, setSelectedVideo] = useState<string | null>(null);
+  // Show only the first video by default, can be modified to show more later
+  const visibleVideos = videos.slice(0, 1);
 
   const handleVideoClick = (videoId: string) => {
     setSelectedVideo(videoId);
@@ -38,8 +27,8 @@ export const VideoSection = () => {
       <div className="container mx-auto px-4">
         {/* <h2 className="text-4xl md:text-5xl font-bold text-center mb-16">VIDEOS</h2> */}
         
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {videos.map((video) => (
+        <div className="max-w-3xl mx-auto">
+          {visibleVideos.map((video) => (
             <div 
               key={video.id} 
               className="aspect-video relative overflow-hidden rounded-lg cursor-pointer hover:opacity-90 transition-opacity"
