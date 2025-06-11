@@ -1,6 +1,7 @@
 "use client";
 
 import { albums } from "@/data/musicData";
+import { SlideIn } from "@/components/ui";
 
 export const MusicSection = () => {
   return (
@@ -8,7 +9,7 @@ export const MusicSection = () => {
       <div className="container mx-auto px-4">
         {/* <h2 className="text-4xl md:text-5xl font-bold text-center mb-16">LATEST RELEASES</h2> */}
         
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <SlideIn className="grid grid-cols-1 md:grid-cols-3 gap-8" staggerDelay={0.2} viewportThreshold={0.05}>
           {albums.map((album) => (
             <div 
               key={album.title} 
@@ -65,7 +66,7 @@ export const MusicSection = () => {
               </div>
             </div>
           ))}
-        </div>
+        </SlideIn>
         
         <div className="mt-16 text-center">
           {/* <Button size="lg" className="bg-red-600 hover:bg-red-700">

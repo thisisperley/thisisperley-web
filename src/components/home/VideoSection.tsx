@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import { videos } from '@/data/videos';
+import { SlideInItem } from '@/components/ui';
 
 export const VideoSection = () => {
   const [isPlaying, setIsPlaying] = useState<boolean>(false);
@@ -24,7 +25,7 @@ export const VideoSection = () => {
       <div className="container mx-auto px-4">
         {/* <h2 className="text-4xl md:text-5xl font-bold text-center mb-16">VIDEOS</h2> */}
         
-        <div className="max-w-3xl mx-auto">
+        <SlideInItem className="max-w-3xl mx-auto" viewportThreshold={0.05}>
           <div 
             className="bg-black p-4 overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 rounded-none hover:rounded-xl transform hover:scale-105"
           >
@@ -61,7 +62,7 @@ export const VideoSection = () => {
               )}
             </div>
           </div>
-        </div>
+        </SlideInItem>
       </div>
     </section>
   );
