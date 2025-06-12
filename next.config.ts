@@ -5,7 +5,7 @@ const nextConfig: NextConfig = {
   output: 'export',
   distDir: 'out',
   images: {
-    unoptimized: false,
+    unoptimized: true,
     formats: ['image/avif', 'image/webp'],
     remotePatterns: [
       {

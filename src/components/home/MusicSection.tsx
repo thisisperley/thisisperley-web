@@ -7,8 +7,13 @@ export const MusicSection = () => {
   return (
     <section id="music" className="py-24 text-white">
       <div className="container mx-auto px-4">
-        {/* <h2 className="text-4xl md:text-5xl font-bold text-center mb-16">LATEST RELEASES</h2> */}
-        
+        <SlideIn staggerDelay={0.1} viewportThreshold={0.05}>
+          <h2 className="text-6xl md:text-6xl font-bold text-center mb-16">
+            <span className="bg-[#232323] text-gray-300 px-6 py-0.5 box-decoration-clone">
+              Music
+            </span>
+          </h2>
+        </SlideIn>
         <SlideIn className="grid grid-cols-1 md:grid-cols-3 gap-8" staggerDelay={0.2} viewportThreshold={0.05}>
           {albums.map((album) => (
             <div 

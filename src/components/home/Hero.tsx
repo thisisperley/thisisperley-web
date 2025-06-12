@@ -1,6 +1,8 @@
 "use client";
 
 import { League_Spartan } from 'next/font/google';
+import Image from 'next/image';
+import { useEffect, useState } from 'react';
 
 // Initialize the League Spartan font as a variable font with multiple weights
 const leagueSpartan = League_Spartan({
@@ -11,6 +13,13 @@ const leagueSpartan = League_Spartan({
 });
 
 export const Hero = () => {
+  const [isLoaded, setIsLoaded] = useState(false);
+
+  useEffect(() => {
+    // Set isLoaded to true after component mounts to trigger the blur animation
+    setIsLoaded(true);
+  }, []);
+
   return (
     <>
       {/* Fixed background */}
@@ -27,15 +36,28 @@ export const Hero = () => {
       </div>
       
       {/* Non-fixed content container that will scroll with the page */}
-      <div className={`${leagueSpartan.variable} relative w-full h-[70vh] flex items-center justify-center`}>
-        {/* 
-          Try different weights by changing the font-weight class:
-          font-light (300), font-normal (400), font-medium (500), 
-          font-semibold (600), font-bold (700), font-extrabold (800)
-        */}
-        <h1 className="font-medium text-[5rem] sm:text-[8rem] md:text-[10rem] lg:text-[12rem] xl:text-[15rem] tracking-[0.15em] sm:tracking-[0.2em] leading-none text-white z-10 px-4 font-league-spartan">
-          perley
-        </h1>
+      <div className={`${leagueSpartan.variable} relative w-full h-[70vh] flex items-start justify-start p-8 md:p-12 lg:p-16`}>
+        {/* Logo container */}
+        <div className="relative z-10">
+          {/* Visually hidden text for SEO */}
+          <h1 className="sr-only">
+            perley
+          </h1>
+          
+          {/* Logo image */}
+          <Image
+            src="/images/perley-logo-hero.png"
+            alt="Perley Logo"
+            width={670}
+            height={248}
+            priority
+            className="w-[320px] sm:w-[450px] md:w-[550px] lg:w-[670px] h-auto aspect-[670/248] opacity-[0.35]"
+            style={{ 
+              filter: isLoaded ? 'blur(0)' : 'blur(10px)',
+              transition: 'filter 800ms ease-in-out'
+            }}
+          />
+        </div>
       </div>
     </>
   );
