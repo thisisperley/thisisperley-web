@@ -23,7 +23,7 @@ export const Hero = () => {
   return (
     <>
       {/* Fixed background */}
-      <div className="fixed inset-0 w-full h-screen">
+      <div className="fixed inset-0 w-full h-screen z-0">
         {/* Background image with overlay */}
         <div 
           className="absolute inset-0 bg-cover bg-center" 
@@ -36,7 +36,7 @@ export const Hero = () => {
       </div>
       
       {/* Non-fixed content container that will scroll with the page */}
-      <div className={`${leagueSpartan.variable} relative w-full h-[70vh] flex items-start justify-start p-8 md:p-12 lg:p-16`}>
+      <div className={`${leagueSpartan.variable} relative w-full h-[70vh] flex items-start justify-start p-8 md:p-12 lg:p-16 z-10`}>
         {/* Logo container */}
         <div className="relative z-10">
           {/* Visually hidden text for SEO */}
