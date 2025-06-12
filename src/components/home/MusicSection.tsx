@@ -2,6 +2,9 @@
 
 import { albums } from "@/data/musicData";
 import { SlideIn } from "@/components/ui";
+import { Inter } from "next/font/google";
+
+const inter = Inter({ subsets: ["latin"], weight: ["400", "600", "700"], variable: "--font-inter" });
 
 export const MusicSection = () => {
   return (
@@ -14,27 +17,27 @@ export const MusicSection = () => {
             </span>
           </h2>
         </SlideIn>
-        <SlideIn className="grid grid-cols-1 md:grid-cols-3 gap-8" staggerDelay={0.2} viewportThreshold={0.05}>
+        <SlideIn className="grid grid-cols-1 md:grid-cols-3 gap-8" staggerDelay={0.2} duration={0.8} viewportThreshold={0.05}>
           {albums.map((album) => (
-            <div 
-              key={album.title} 
-              className="bg-transparent overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 rounded-none hover:rounded-xl transform hover:scale-105"
+            <article
+              key={album.title}
+              className={`w-full bg-neutral-900 border border-neutral-800 rounded-2xl shadow-[0px_0px_0px_1px_rgba(0,0,0,0.06),0px_1px_1px_-0.5px_rgba(0,0,0,0.06),0px_3px_3px_-1.5px_rgba(0,0,0,0.06),_0px_6px_6px_-3px_rgba(0,0,0,0.06),0px_12px_12px_-6px_rgba(0,0,0,0.06),0px_24px_24px_-12px_rgba(0,0,0,0.06)] p-6 flex flex-col gap-4 ${inter.variable} transition-transform duration-300 ease-in-out hover:scale-105 hover:shadow-lg`}
             >
-              <div className="aspect-square relative overflow-hidden">
+              <div className="aspect-square relative overflow-hidden rounded-xl mb-4">
                 <img 
                   src={album.cover}
                   alt={album.title}
-                  className="absolute inset-0 w-full h-full object-cover"
+                  className="absolute inset-0 w-full h-full object-cover rounded-xl"
                 />
               </div>
-              <div className="p-6 pb-8 bg-black h-[130px] flex flex-col justify-between">
+              <div className="flex flex-col justify-between flex-1">
                 {album.released ? (
                   <>
                     <div>
-                      <h3 className="text-xl font-bold">Perley • {album.title}</h3>
-                      <p className="text-gray-400">{album.year}</p>
+                      <h3 className="font-inter font-semibold text-2xl md:text-3xl tracking-tight text-white mb-1">Perley • {album.title}</h3>
+                      <p className="font-inter text-lg md:text-xl text-white mb-2">{album.year}</p>
                     </div>
-                    <div className="mt-4 flex space-x-4">
+                    <div className="mt-2 flex space-x-4">
                       {album.links.spotify && (
                         <a 
                           href={album.links.spotify} 
@@ -65,11 +68,11 @@ export const MusicSection = () => {
                   </>
                 ) : (
                   <div className="flex flex-col h-full justify-center">
-                    <p className="text-xl font-bold text-white">Coming Soon</p>
+                    <p className="font-inter font-semibold text-2xl md:text-3xl tracking-tight text-white">Coming Soon</p>
                   </div>
                 )}
               </div>
-            </div>
+            </article>
           ))}
         </SlideIn>
         

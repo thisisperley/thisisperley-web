@@ -84,7 +84,10 @@ export const Footer = () => {
           </div> */}
           
           <p className="text-sm text-white bg-[#232323] px-3 py-1">
-            &copy; {currentYear} This Is Perley. All rights reserved.
+            &copy; {currentYear} Perley. All rights reserved.
+          </p>
+          <p className="text-sm text-white bg-[#232323] px-3 py-1">
+            Website by <a href="https://www.rocket5studios.com" className="text-white hover:text-red-500 transition-colors duration-300">Rocket 5 Studios</a>
           </p>
         </div>
       </div>
