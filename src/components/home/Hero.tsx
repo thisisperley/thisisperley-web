@@ -48,10 +48,10 @@ export const Hero = () => {
           <Image
             src="/images/perley-logo-hero.png"
             alt="Perley Logo"
-            width={670}
+            width={503}
             height={248}
             priority
-            className="w-[320px] sm:w-[450px] md:w-[550px] lg:w-[670px] h-auto aspect-[670/248] opacity-[0.35]"
+            className="w-[240px] sm:w-[338px] md:w-[413px] lg:w-[503px] h-auto aspect-[670/248] opacity-[0.35]"
             style={{ 
               filter: isLoaded ? 'blur(0)' : 'blur(10px)',
               transition: 'filter 800ms ease-in-out'

@@ -10,8 +10,8 @@ interface NoiseProps {
 
 const Noise: React.FC<NoiseProps> = ({
   patternSize = 250,
-  patternScaleX = 2,
-  patternScaleY = 2,
+  patternScaleX = 1,
+  patternScaleY = 1,
   patternRefreshInterval = 2,
   patternAlpha = 15,
 }) => {
@@ -81,7 +81,7 @@ const Noise: React.FC<NoiseProps> = ({
     };
   }, [patternSize, patternScaleX, patternScaleY, patternRefreshInterval, patternAlpha]);
 
-  return <canvas className="fixed inset-0 w-full h-full pointer-events-none z-50 opacity-100" ref={grainRef} aria-hidden="true" />;
+  return <canvas className="fixed inset-0 w-full h-full pointer-events-none z-50 opacity-90" ref={grainRef} aria-hidden="true" />;
 };
 
 export default Noise; 
