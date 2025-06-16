@@ -10,7 +10,7 @@ A modern, performant, and SEO-optimized Next.js website for the Toronto based in
 - **Responsive Design**: Fully responsive across all device sizes
 - **Themeable**: Built-in theme system with 3 custom themes
 - **Accessible**: Semantic HTML, ARIA attributes, keyboard navigation support
-- **CI/CD**: Automated deployment via GitHub Actions
+- **CI/CD**: Automated deployment via GitHub Actions to FTP server
 - **Interactive UI**: Mouse-following blob effect for enhanced visual experience
 
 ## Getting Started
@@ -24,8 +24,8 @@ A modern, performant, and SEO-optimized Next.js website for the Toronto based in
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your-username/perley-web.git
-   cd perley-web
+   git clone https://github.com/your-username/thisisperley-web.git
+   cd thisisperley-web
    ```
 
 2. Install dependencies:
@@ -116,22 +116,22 @@ Update the content by modifying:
 
 ## Deployment
 
-The site is configured for static export and is deployed to GitHub Pages. A GitHub Actions workflow handles the automated deployment process.
+The site is configured for static export and is deployed to a traditional web hosting provider via FTP. A GitHub Actions workflow handles the automated deployment process.
 
 The deployment workflow:
 1. Builds the Next.js application
 2. Exports static files
-3. Deploys to GitHub Pages
-4. Sets up the custom domain (thisisperley.com)
+3. Deploys to the web hosting server via FTP
 
-To set up GitHub Pages deployment:
+To set up FTP deployment, you need to configure the following secrets in your GitHub repository:
 
 1. Go to your repository settings
-2. Navigate to "Pages"
-3. Ensure GitHub Actions is selected as the build and deployment source
-4. The custom domain is configured through the CNAME file in the public directory
-
-No additional secrets are required for GitHub Pages deployment as it uses the built-in GITHUB_TOKEN.
+2. Navigate to "Secrets and variables" > "Actions"
+3. Add the following secrets:
+   - `FTP_SERVER`: Your FTP server hostname
+   - `FTP_USERNAME`: Your FTP username
+   - `FTP_PASSWORD`: Your FTP password
+   - `FTP_SERVER_DIR`: The directory on the FTP server where files should be uploaded (e.g., `/public_html/`)
 
 ## License
 
