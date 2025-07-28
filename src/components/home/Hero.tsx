@@ -3,6 +3,7 @@
 import { League_Spartan } from 'next/font/google';
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
+import { EventSection } from './EventSection';
 
 // Initialize the League Spartan font as a variable font with multiple weights
 const leagueSpartan = League_Spartan({
@@ -59,6 +60,9 @@ export const Hero = () => {
           />
         </div>
       </div>
+      
+      {/* Event Section */}
+      <EventSection />
     </>
   );
 }; 
