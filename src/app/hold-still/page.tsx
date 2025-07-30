@@ -1,6 +1,8 @@
 import Link from "next/link";
 import { albums } from "@/data/musicData";
 import { Inter } from "next/font/google";
+import type { Metadata } from "next";
+import { JsonLd } from "@/components/seo/JsonLd";
 
 const inter = Inter({ subsets: ["latin"], weight: ["400", "600", "700"], variable: "--font-inter" });
 
@@ -9,6 +11,41 @@ export function generateStaticParams() {
   return [{}];
 }
 
+export const metadata: Metadata = {
+  title: "Hold Still",
+  description: "Hold Still by Perley - Listen to the new single from Toronto indie rock band Perley on Spotify, Bandcamp, Tidal, YouTube Music, and Amazon Music.",
+  keywords: ["Hold Still", "Perley", "Toronto indie band", "indie rock", "new single", "streaming", "music"],
+  openGraph: {
+    title: "Hold Still | Perley",
+    description: "Hold Still by Perley - Listen to the new single from Toronto indie rock band Perley on all major streaming platforms.",
+    url: "https://thisisperley.com/hold-still",
+    type: "music.song",
+    images: [
+      {
+        url: "https://thisisperley.com/images/perley-single-hold-still.jpg",
+        width: 1200,
+        height: 1200,
+        alt: "Hold Still by Perley - Album Cover",
+      },
+    ],
+    siteName: "Perley",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Hold Still | Perley",
+    description: "Hold Still by Perley - Listen to the new single from Toronto indie rock band Perley on all major streaming platforms.",
+    images: ["https://thisisperley.com/images/perley-single-hold-still.jpg"],
+    creator: "@thisisperley",
+  },
+  alternates: {
+    canonical: "https://thisisperley.com/hold-still",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
+};
+
 export default function HoldStillPage() {
   const holdStillAlbum = albums.find(album => album.title === "Hold Still");
 
@@ -16,8 +53,31 @@ export default function HoldStillPage() {
     return <div>Album not found</div>;
   }
 
+  const musicRecordingJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "MusicRecording",
+    name: "Hold Still",
+    byArtist: {
+      "@type": "MusicGroup",
+      name: "Perley",
+      url: "https://thisisperley.com",
+    },
+    datePublished: "2025",
+    genre: ["Indie", "Shoegaze", "Punk", "Prog Rock"],
+    url: "https://thisisperley.com/hold-still",
+    image: "https://thisisperley.com/images/perley-single-hold-still.jpg",
+    sameAs: [
+      holdStillAlbum.links.spotify,
+      holdStillAlbum.links.bandcamp,
+      holdStillAlbum.links.tidal,
+      holdStillAlbum.links.youtubemusic,
+      holdStillAlbum.links.amazon,
+    ].filter(Boolean),
+  };
+
   return (
     <div className={`min-h-screen bg-black text-white ${inter.variable}`}>
+      <JsonLd data={musicRecordingJsonLd} />
       {/* Header with Perley logo */}
       <header className="p-6 flex justify-center">
         <Link href="/" className="hover:opacity-80 transition-opacity">

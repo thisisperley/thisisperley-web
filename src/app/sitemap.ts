@@ -13,6 +13,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "weekly",
       priority: 1,
     },
+    {
+      url: `${baseUrl}/hold-still`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.9,
+    },
     // Add potential future routes with appropriate priorities
     // {
     //   url: `${baseUrl}/music`,
