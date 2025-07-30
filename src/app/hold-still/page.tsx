@@ -1,10 +1,13 @@
-"use client";
-
 import Link from "next/link";
 import { albums } from "@/data/musicData";
 import { Inter } from "next/font/google";
 
 const inter = Inter({ subsets: ["latin"], weight: ["400", "600", "700"], variable: "--font-inter" });
+
+// This tells Next.js to generate this page at build time for static export
+export function generateStaticParams() {
+  return [{}];
+}
 
 export default function HoldStillPage() {
   const holdStillAlbum = albums.find(album => album.title === "Hold Still");
