@@ -52,12 +52,10 @@ export const Hero = () => {
             width={503}
             height={248}
             priority
-            className="w-[240px] sm:w-[338px] md:w-[413px] lg:w-[503px] opacity-[0.35]"
+            className="w-[188px] sm:w-[264px] md:w-[323px] lg:w-[393px] h-auto opacity-[0.35]"
             style={{ 
               filter: isLoaded ? 'blur(0)' : 'blur(10px)',
-              transition: 'filter 800ms ease-in-out',
-              height: 'auto',
-              width: 'auto'
+              transition: 'filter 800ms ease-in-out'
             }}
           />
         </div>
