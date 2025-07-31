@@ -9,7 +9,8 @@ export const albums = [
       bandcamp: "https://perley.bandcamp.com/track/hold-still/",
       tidal: "https://tidal.com/browse/album/451098606",
       youtubemusic: "https://music.youtube.com/watch?v=O0K_QLSY23M",
-      amazon: "https://music.amazon.com/albums/B0FKG81LGX"
+      amazon: "https://music.amazon.com/albums/B0FKG81LGX",
+      applemusic: "https://music.apple.com/us/album/hold-still-single/1830081650"
     }
   },
   {
