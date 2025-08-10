@@ -1,6 +1,6 @@
 "use client";
 
-import { ReactNode } from "react";
+import { ReactNode, useState, useEffect } from "react";
 import { motion } from "framer-motion";
 
 interface SlideInProps {
@@ -32,7 +32,7 @@ export const SlideIn = ({
           key={index}
           initial={{ opacity: 0, y: distance }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: viewportThreshold }}
+          viewport={{ once: true, amount: 0.3 }}
           transition={{
             duration,
             ease: "easeInOut",
@@ -60,7 +60,7 @@ export const SlideInItem = ({
       className={className}
       initial={{ opacity: 0, y: distance }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, amount: viewportThreshold }}
+      viewport={{ once: true, amount: 0.3 }}
       transition={{
         duration,
         ease: "easeInOut",

@@ -21,5 +21,5 @@ export const upcomingEvent: Event = {
     label: "Listen Live on cjai.ca",
     url: "https://www.cjai.ca/"
   },
-  isActive: true
+  isActive: false
 };

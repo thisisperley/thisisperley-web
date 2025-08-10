@@ -2,7 +2,6 @@
 
 import Link from "next/link";
 import { albums } from "@/data/musicData";
-import { SlideIn } from "@/components/ui";
 import { Inter } from "next/font/google";
 
 const inter = Inter({ subsets: ["latin"], weight: ["400", "600", "700"], variable: "--font-inter" });
@@ -18,7 +17,7 @@ export const MusicSection = () => {
             </span>
           </h2>
         </SlideIn> */}
-        <SlideIn className="grid grid-cols-1 md:grid-cols-3 gap-8" staggerDelay={0.2} duration={0.8} viewportThreshold={0.05}>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {albums.map((album) => {
             const handleCardClick = () => {
               if (album.title === "Hold Still" && album.released) {
@@ -156,7 +155,7 @@ export const MusicSection = () => {
               </article>
             );
           })}
-        </SlideIn>
+        </div>
         
         <div className="mt-16 text-center">
           {/* <Button size="lg" className="bg-red-600 hover:bg-red-700">
