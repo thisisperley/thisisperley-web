@@ -1,6 +1,5 @@
 import { WebsiteJsonLd, MusicGroupJsonLd } from "@/components/seo/JsonLd";
-import { Hero } from "@/components/home/Hero";
-import { MusicSection, VideoSection, AboutSection } from "@/components/home/Sections";
+import { Hero, MusicSection, VideoSection, AboutSection } from "@/components/home";
 import { Footer } from "@/components/layout/Footer";
 
 export default function Home() {

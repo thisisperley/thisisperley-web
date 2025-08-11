@@ -52,9 +52,9 @@ const BlobEffect = ({
     document.documentElement.style.setProperty("--mouse-y", "50%");
 
     // Simple throttling function
-    const throttle = <T extends (...args: any[]) => void>(func: T, delay: number) => {
+    const throttle = <T extends (...args: unknown[]) => void>(func: T, delay: number) => {
       let lastCall = 0;
-      return function(this: any, ...args: Parameters<T>) {
+      return function(this: unknown, ...args: Parameters<T>) {
         const now = new Date().getTime();
         if (now - lastCall < delay) {
           return;
@@ -65,9 +65,10 @@ const BlobEffect = ({
     };
 
     // Update CSS custom properties for mouse position
-    const handleMouseMove = throttle((event: MouseEvent) => {
-      document.documentElement.style.setProperty("--mouse-x", `${event.clientX}px`);
-      document.documentElement.style.setProperty("--mouse-y", `${event.clientY}px`);
+    const handleMouseMove = throttle((event: unknown) => {
+      const mouseEvent = event as MouseEvent;
+      document.documentElement.style.setProperty("--mouse-x", `${mouseEvent.clientX}px`);
+      document.documentElement.style.setProperty("--mouse-y", `${mouseEvent.clientY}px`);
     }, throttleAmount);
 
     document.addEventListener("mousemove", handleMouseMove);

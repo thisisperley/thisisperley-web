@@ -45,11 +45,10 @@ export const VideoSection = () => {
                       alt={visibleVideos[0]?.title || "Video thumbnail"}
                       className="w-full h-full object-cover rounded-lg"
                     />
-                    <div 
-                      className="absolute inset-0 flex items-center justify-center cursor-pointer"
+                    <button 
+                      className="absolute inset-0 flex items-center justify-center cursor-pointer bg-transparent border-none"
                       onClick={handleVideoClick}
                       onKeyDown={handleKeyDown}
-                      tabIndex={0}
                       aria-label={`Play ${visibleVideos[0]?.title || "video"}`}
                     >
                       <div className="w-16 h-16 bg-red-600 rounded-full flex items-center justify-center transform transition-transform hover:scale-110">
@@ -57,7 +56,7 @@ export const VideoSection = () => {
                           <path d="M8 5v14l11-7z" />
                         </svg>
                       </div>
-                    </div>
+                    </button>
                   </>
                 ) : (
                   <iframe

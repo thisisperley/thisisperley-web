@@ -1,6 +1,5 @@
 "use client";
 
-import Link from "next/link";
 import { albums } from "@/data/musicData";
 import { Inter } from "next/font/google";
 
@@ -42,7 +41,7 @@ export const MusicSection = () => {
                 {album.released ? (
                   <>
                     <div>
-                      <h3 className="font-inter font-semibold text-2xl md:text-3xl tracking-tight text-white mb-1">Perley • {album.title}</h3>
+                      <h2 className="font-inter font-semibold text-2xl md:text-3xl tracking-tight text-white mb-1">Perley • {album.title}</h2>
                       <p className="font-inter text-lg md:text-xl text-white mb-2">{album.year}</p>
                     </div>
                     <div className="mt-2 flex flex-wrap gap-4">

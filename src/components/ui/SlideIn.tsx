@@ -1,6 +1,6 @@
 "use client";
 
-import { ReactNode, useState, useEffect } from "react";
+import { ReactNode } from "react";
 import { motion } from "framer-motion";
 
 interface SlideInProps {
@@ -18,7 +18,7 @@ export const SlideIn = ({
   staggerDelay = 0,
   duration = 0.8,
   distance = 50,
-  viewportThreshold = 0.1,
+  // viewportThreshold = 0.1,
 }: SlideInProps) => {
   // Handle both single children and arrays of children
   const childrenArray = Array.isArray(children) 
@@ -53,7 +53,7 @@ export const SlideInItem = ({
   delay = 0,
   duration = 0.8,
   distance = 50,
-  viewportThreshold = 0.1,
+  // viewportThreshold = 0.1,
 }: Omit<SlideInProps, "staggerDelay"> & { delay?: number }) => {
   return (
     <motion.div

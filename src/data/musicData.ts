@@ -2,7 +2,7 @@ export const albums = [
   {
     title: "Hold Still",
     year: "2025",
-    cover: "/images/perley-single-hold-still.jpg",
+    cover: "/images/perley-single-hold-still.webp",
     released: true,
     links: {
       spotify: "https://open.spotify.com/album/4fN0rRP9z91rcdRxKpDod8?si=DHrrYowGT2ma_vvX-7yLgA",
@@ -16,7 +16,7 @@ export const albums = [
   {
     title: "Unknown #1",
     year: "2025",
-    cover: "/images/perley-single-placeholder-1.jpg",
+    cover: "/images/perley-single-placeholder-1.webp",
     released: false,
     links: {
       spotify: "",
@@ -30,7 +30,7 @@ export const albums = [
   {
     title: "Unknown #2",
     year: "2025",
-    cover: "/images/perley-single-placeholder-2.jpg",
+    cover: "/images/perley-single-placeholder-2.webp",
     released: false,
     links: {
       spotify: "",

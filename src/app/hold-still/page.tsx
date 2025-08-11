@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     type: "music.song",
     images: [
       {
-        url: "https://thisisperley.com/images/perley-single-hold-still.jpg",
+        url: "https://thisisperley.com/images/perley-single-hold-still.webp",
         width: 1200,
         height: 1200,
         alt: "Hold Still by Perley - Album Cover",
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Hold Still | Perley",
     description: "Hold Still by Perley - Listen to the new single from Toronto indie rock band Perley on all major streaming platforms.",
-    images: ["https://thisisperley.com/images/perley-single-hold-still.jpg"],
+    images: ["https://thisisperley.com/images/perley-single-hold-still.webp"],
     creator: "@thisisperley",
   },
   alternates: {
@@ -65,7 +65,7 @@ export default function HoldStillPage() {
     datePublished: "2025",
     genre: ["Indie", "Shoegaze", "Punk", "Prog Rock"],
     url: "https://thisisperley.com/hold-still",
-    image: "https://thisisperley.com/images/perley-single-hold-still.jpg",
+    image: "https://thisisperley.com/images/perley-single-hold-still.webp",
     sameAs: [
       holdStillAlbum.links.spotify,
       holdStillAlbum.links.bandcamp,

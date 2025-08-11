@@ -29,7 +29,7 @@ export const Hero = () => {
         <div 
           className="absolute inset-0 bg-cover bg-center" 
           style={{ 
-            backgroundImage: "url('/images/perley-web-header-v6.jpg')", 
+            backgroundImage: "url('/images/perley-web-header-v6.webp')", 
             backgroundPosition: "center",
             filter: "brightness(1)",
           }}
