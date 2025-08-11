@@ -43,6 +43,8 @@ export const VideoSection = () => {
                     <img 
                       src={`https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`}
                       alt={visibleVideos[0]?.title || "Video thumbnail"}
+                      width={1280}
+                      height={720}
                       className="w-full h-full object-cover rounded-lg"
                     />
                     <button 

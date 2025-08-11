@@ -76,6 +76,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={inter.variable} suppressHydrationWarning>
+      <head>
+        <link
+          rel="preload"
+          as="image"
+          href="/images/perley-web-header-v6.webp"
+          type="image/webp"
+        />
+      </head>
       <body className="min-h-screen bg-background font-sans antialiased flex flex-col">
         <ClientThemeLayout>{children}</ClientThemeLayout>
       </body>
