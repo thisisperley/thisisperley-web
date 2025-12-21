@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { albums } from "@/data/musicData";
 import { Inter } from "next/font/google";
 import type { Metadata } from "next";
@@ -82,9 +83,11 @@ export default function HoldStillPage() {
       {/* Header with Perley logo */}
       <header className="p-6 flex justify-center">
         <Link href="/" className="hover:opacity-80 transition-opacity">
-          <img
+          <Image
             src="/images/perley-logo-hero.png"
             alt="Perley"
+            width={120}
+            height={32}
             className="h-8 w-auto"
           />
         </Link>
@@ -96,11 +99,13 @@ export default function HoldStillPage() {
         <div className="bg-neutral-900 border border-neutral-800 rounded-3xl p-8 shadow-2xl max-w-sm w-full">
           {/* Album artwork */}
           <div className="mb-8">
-            <div className="w-full aspect-square rounded-2xl overflow-hidden">
-              <img
+            <div className="w-full aspect-square rounded-2xl overflow-hidden relative">
+              <Image
                 src={holdStillAlbum.cover}
                 alt={holdStillAlbum.title}
-                className="w-full h-full object-cover"
+                fill
+                sizes="(max-width: 640px) 100vw, 384px"
+                className="object-cover"
               />
             </div>
           </div>

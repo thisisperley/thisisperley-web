@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { albums } from "@/data/musicData";
 import { Inter } from "next/font/google";
 
@@ -31,10 +32,12 @@ export const MusicSection = () => {
                 onClick={album.title === "Hold Still" && album.released ? handleCardClick : undefined}
               >
               <div className="aspect-square relative overflow-hidden rounded-xl mb-4">
-                <img 
+                <Image
                   src={album.cover}
                   alt={album.title}
-                  className="absolute inset-0 w-full h-full object-cover rounded-xl"
+                  fill
+                  sizes="(max-width: 768px) 100vw, 33vw"
+                  className="object-cover rounded-xl"
                 />
               </div>
               <div className="flex flex-col justify-between flex-1">

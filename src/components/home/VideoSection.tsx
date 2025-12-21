@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from 'react';
+import Image from 'next/image';
 import { videos } from '@/data/videos';
 import { SlideInItem } from '@/components/ui';
 import { Inter } from 'next/font/google';
@@ -40,12 +41,12 @@ export const VideoSection = () => {
               >
                 {!isPlaying ? (
                   <>
-                    <img 
+                    <Image
                       src={`https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`}
                       alt={visibleVideos[0]?.title || "Video thumbnail"}
-                      width={1280}
-                      height={720}
-                      className="w-full h-full object-cover rounded-lg"
+                      fill
+                      sizes="(max-width: 768px) 100vw, 768px"
+                      className="object-cover rounded-lg"
                     />
                     <button 
                       className="absolute inset-0 flex items-center justify-center cursor-pointer bg-transparent border-none"

@@ -10,6 +10,11 @@ const nextConfig: NextConfig = {
         hostname: 'thisisperley.com',
         pathname: '**',
       },
+      {
+        protocol: 'https',
+        hostname: 'img.youtube.com',
+        pathname: '**',
+      },
     ],
   },
   reactStrictMode: true,
