@@ -31,10 +31,6 @@ export const VideoSection = () => {
           <article
             className={`w-full max-w-3xl bg-neutral-900 border border-neutral-800 rounded-2xl shadow-[0px_0px_0px_1px_rgba(0,0,0,0.06),0px_1px_1px_-0.5px_rgba(0,0,0,0.06),0px_3px_3px_-1.5px_rgba(0,0,0,0.06),_0px_6px_6px_-3px_rgba(0,0,0,0.06),0px_12px_12px_-6px_rgba(0,0,0,0.06),0px_24px_24px_-12px_rgba(0,0,0,0.06)] p-8 md:p-12 flex flex-col gap-6 ${inter.variable} transition-transform duration-300 ease-in-out hover:scale-105 hover:shadow-lg`}
           >
-            {/* <header>
-              <h2 className="font-inter font-semibold text-3xl md:text-4xl tracking-tight text-white mb-2">Featured Video</h2>
-              <p className="font-inter text-lg md:text-xl text-white mb-4">Watch our latest performance</p>
-            </header> */}
             <section>
               <div 
                 className="aspect-video relative overflow-hidden rounded-lg border border-neutral-800 bg-black"

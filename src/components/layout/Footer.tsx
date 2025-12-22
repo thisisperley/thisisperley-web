@@ -75,12 +75,7 @@ export const Footer = () => {
               </a>
             ))}
           </div>
-          
-          {/* <div className="text-center text-gray-400 max-w-xl">
-            <p className="mb-2">For booking inquiries: booking@thisisperley.com</p>
-            <p className="mb-8">Subscribe to our newsletter for tour updates and exclusive content</p>
-          </div> */}
-          
+
           <p className="text-sm text-white bg-[#232323] px-3 py-1">
             &copy; {currentYear} Perley. All rights reserved.
           </p>
