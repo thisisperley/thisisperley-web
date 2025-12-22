@@ -1,6 +1,7 @@
 import "./globals.css";
 import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
+import Script from "next/script";
 import { ClientThemeLayout } from "@/components/layout/ClientThemeLayout";
 
 const inter = Inter({
@@ -74,6 +75,11 @@ export default function RootLayout({
   return (
     <html lang="en" className={inter.variable} suppressHydrationWarning>
       <head>
+        <Script
+          src="https://cloud.umami.is/script.js"
+          data-website-id="51e45c2d-d440-460e-a454-b3c005130c1c"
+          strategy="afterInteractive"
+        />
         <link
           rel="preload"
           as="image"
