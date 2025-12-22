@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import type { Album } from "@/data/musicData";
 
 interface TrackCardProps {
@@ -28,18 +29,11 @@ const StreamingIcon = ({
   </a>
 );
 
-export const TrackCard = ({ album }: TrackCardProps) => {
-  const handleCardClick = () => {
-    if (album.released) {
-      window.location.href = `/${album.slug}`;
-    }
-  };
+const cardClasses = "w-full bg-neutral-900 border border-neutral-800 rounded-2xl shadow-[0px_0px_0px_1px_rgba(0,0,0,0.06),0px_1px_1px_-0.5px_rgba(0,0,0,0.06),0px_3px_3px_-1.5px_rgba(0,0,0,0.06),_0px_6px_6px_-3px_rgba(0,0,0,0.06),0px_12px_12px_-6px_rgba(0,0,0,0.06),0px_24px_24px_-12px_rgba(0,0,0,0.06)] p-6 flex flex-col gap-4 transition-transform duration-300 ease-in-out hover:scale-105 hover:shadow-lg";
 
+function CardContent({ album }: { album: Album }) {
   return (
-    <article
-      className={`w-full bg-neutral-900 border border-neutral-800 rounded-2xl shadow-[0px_0px_0px_1px_rgba(0,0,0,0.06),0px_1px_1px_-0.5px_rgba(0,0,0,0.06),0px_3px_3px_-1.5px_rgba(0,0,0,0.06),_0px_6px_6px_-3px_rgba(0,0,0,0.06),0px_12px_12px_-6px_rgba(0,0,0,0.06),0px_24px_24px_-12px_rgba(0,0,0,0.06)] p-6 flex flex-col gap-4 transition-transform duration-300 ease-in-out hover:scale-105 hover:shadow-lg ${album.released ? 'cursor-pointer' : ''}`}
-      onClick={album.released ? handleCardClick : undefined}
-    >
+    <>
       <div className="aspect-square relative overflow-hidden rounded-xl mb-4">
         <Image
           src={album.cover}
@@ -118,6 +112,26 @@ export const TrackCard = ({ album }: TrackCardProps) => {
           </div>
         )}
       </div>
+    </>
+  );
+}
+
+export const TrackCard = ({ album }: TrackCardProps) => {
+  if (album.released) {
+    return (
+      <Link
+        href={`/${album.slug}`}
+        className={`${cardClasses} block cursor-pointer`}
+        aria-label={`View ${album.title} by Perley`}
+      >
+        <CardContent album={album} />
+      </Link>
+    );
+  }
+
+  return (
+    <article className={cardClasses}>
+      <CardContent album={album} />
     </article>
   );
 };
