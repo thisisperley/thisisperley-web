@@ -37,7 +37,7 @@ function CardContent({ album }: { album: Album }) {
       <div className="aspect-square relative overflow-hidden rounded-xl mb-4">
         <Image
           src={album.cover}
-          alt={album.title}
+          alt={`${album.title} by Perley - ${album.released ? album.year + ' Release' : 'Coming Soon'}`}
           fill
           sizes="(max-width: 768px) 100vw, 33vw"
           className="object-cover rounded-xl"

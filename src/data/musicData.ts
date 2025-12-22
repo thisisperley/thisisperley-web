@@ -13,6 +13,7 @@ export interface Album {
   slug: string;
   year: string;
   cover: string;
+  ogImage?: string;
   released: boolean;
   links: AlbumLinks;
 }
@@ -23,6 +24,7 @@ export const albums: Album[] = [
     slug: "hold-still",
     year: "2025",
     cover: "/images/perley-single-hold-still.webp",
+    ogImage: "/og-hold-still.jpg",
     released: true,
     links: {
       spotify: "https://open.spotify.com/album/4fN0rRP9z91rcdRxKpDod8?si=DHrrYowGT2ma_vvX-7yLgA",
@@ -38,6 +40,7 @@ export const albums: Album[] = [
     slug: "holidark",
     year: "2025",
     cover: "/images/perley-single-holidark.webp",
+    ogImage: "/og-holidark.jpg",
     released: true,
     links: {
       spotify: "https://open.spotify.com/album/5xt8fvRoqJqJlXiC6P0ewU",

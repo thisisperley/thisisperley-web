@@ -1,31 +1,30 @@
 import { MetadataRoute } from "next";
+import { albums } from "@/data/musicData";
 
 export const dynamic = "force-static";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = "https://thisisperley.com";
-  
-  // Define your static pages
-  const routes = [
+
+  // Homepage
+  const routes: MetadataRoute.Sitemap = [
     {
-      url: `${baseUrl}`,
+      url: baseUrl,
       lastModified: new Date(),
-      changeFrequency: "weekly",
+      changeFrequency: "daily",
       priority: 1,
     },
-    {
-      url: `${baseUrl}/hold-still`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/holidark`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.9,
-    },
-  ] as MetadataRoute.Sitemap;
+  ];
 
-  return routes;
-} 
+  // Dynamically add all released album pages
+  const albumRoutes = albums
+    .filter((album) => album.released)
+    .map((album) => ({
+      url: `${baseUrl}/${album.slug}`,
+      lastModified: new Date(),
+      changeFrequency: "monthly" as const,
+      priority: 0.8,
+    }));
+
+  return [...routes, ...albumRoutes];
+}

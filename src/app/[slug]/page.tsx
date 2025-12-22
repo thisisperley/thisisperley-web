@@ -24,7 +24,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     return { title: "Not Found" };
   }
 
-  const imageUrl = `https://thisisperley.com${album.cover}`;
+  const imageUrl = `https://thisisperley.com${album.ogImage || '/og-perley.jpg'}`;
 
   return {
     title: album.title,
@@ -139,7 +139,8 @@ export default async function AlbumPage({ params }: { params: Promise<{ slug: st
     datePublished: album.year,
     genre: ["Indie", "Shoegaze", "Punk", "Prog Rock"],
     url: `https://thisisperley.com/${album.slug}`,
-    image: `https://thisisperley.com${album.cover}`,
+    image: `https://thisisperley.com${album.ogImage || '/og-perley.jpg'}`,
+    thumbnailUrl: `https://thisisperley.com${album.cover}`,
     sameAs: [
       album.links.spotify,
       album.links.bandcamp,
