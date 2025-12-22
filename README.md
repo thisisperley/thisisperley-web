@@ -5,12 +5,12 @@ A modern, performant, and SEO-optimized Next.js website for the Toronto based in
 ## Features
 
 - **Modern Stack**: Next.js 15, React 19, TypeScript, TailwindCSS 4
-- **Performance Optimized**: Static site generation for maximum performance
+- **Performance Optimized**: Server-side rendering with Vercel edge deployment
 - **SEO Ready**: Comprehensive metadata, JSON-LD structured data, sitemap
 - **Responsive Design**: Fully responsive across all device sizes
 - **Themeable**: Built-in theme system with 3 custom themes
 - **Accessible**: Semantic HTML, ARIA attributes, keyboard navigation support
-- **CI/CD**: Automated deployment via GitHub Actions to FTP server
+- **CI/CD**: Automated deployment via Vercel
 - **Interactive UI**: Mouse-following blob effect for enhanced visual experience
 
 ## Getting Started
@@ -116,22 +116,11 @@ Update the content by modifying:
 
 ## Deployment
 
-The site is configured for static export and is deployed to a traditional web hosting provider via FTP. A GitHub Actions workflow handles the automated deployment process.
-
-The deployment workflow:
-1. Builds the Next.js application
-2. Exports static files
-3. Deploys to the web hosting server via FTP
-
-To set up FTP deployment, you need to configure the following secrets in your GitHub repository:
-
-1. Go to your repository settings
-2. Navigate to "Secrets and variables" > "Actions"
-3. Add the following secrets:
-   - `FTP_SERVER`: Your FTP server hostname
-   - `FTP_USERNAME`: Your FTP username
-   - `FTP_PASSWORD`: Your FTP password
-   - `FTP_SERVER_DIR`: The directory on the FTP server where files should be uploaded (e.g., `/public_html/`)
+The site is deployed to Vercel with automatic deployments on push to the main branch. Vercel provides:
+- Automatic builds and deployments
+- Preview deployments for pull requests
+- Edge network distribution
+- Full Next.js feature support (SSR, ISR, image optimization)
 
 ## License
 

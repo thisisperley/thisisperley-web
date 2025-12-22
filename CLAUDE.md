@@ -4,23 +4,22 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-This is a Next.js-based portfolio website for Perley, a Toronto-based indie rock band. The site is built with Next.js 15, React 19, TypeScript, and TailwindCSS 4, configured for static export and deployed to an FTP server via GitHub Actions.
+This is a Next.js-based portfolio website for Perley, a Toronto-based indie rock band. The site is built with Next.js 15, React 19, TypeScript, and TailwindCSS 4, and deployed to Vercel.
 
 ## Common Commands
 
 - `npm run dev` - Start development server on localhost:3000
-- `npm run build` - Build for production (static export to `/out` directory)
-- `npm start` - Start production server (rarely used due to static export)
+- `npm run build` - Build for production
+- `npm start` - Start production server
 - `npm run lint` - Run ESLint for code quality checks
 
 ## Architecture Overview
 
-### Static Export Configuration
-The project is configured for static export via `next.config.ts`:
-- `output: 'export'` - Generates static HTML files
-- `distDir: 'out'` - Output directory for built files
-- `images.unoptimized: true` - Required for static export
+### Build Configuration
+The project is configured via `next.config.ts`:
+- `reactStrictMode: true` - Enables React strict mode
 - `eslint.ignoreDuringBuilds: true` - Skips ESLint during builds
+- Next.js Image optimization enabled with AVIF/WebP formats
 
 ### Key Technologies
 - **Next.js 15** with App Router (`src/app/`)
@@ -44,14 +43,12 @@ The project is configured for static export via `next.config.ts`:
 - **Static Content Management**: Content stored in TypeScript files in `src/data/`
 
 ### Deployment
-- **GitHub Actions**: Automated deployment on push to main branch
-- **FTP Deployment**: Uses SamKirkland/FTP-Deploy-Action@v4.3.4
-- **Static Export**: Files are built to `/out` and deployed to FTP server
-- **Required Secrets**: FTP_SERVER, FTP_USERNAME, FTP_PASSWORD, FTP_SERVER_DIR
+- **Vercel**: Automated deployment on push to main branch
+- Full Next.js features supported (SSR, ISR, image optimization, etc.)
 
 ### Development Notes
 - The site uses client-side components for interactive features
-- Images are unoptimized due to static export requirements
+- Next.js Image optimization is enabled (AVIF/WebP formats)
 - ESLint is configured but ignored during builds
 - The project follows Next.js App Router conventions with TypeScript
 
