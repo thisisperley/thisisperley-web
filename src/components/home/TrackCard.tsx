@@ -17,16 +17,18 @@ const StreamingIcon = ({
   label: string;
   children: React.ReactNode;
 }) => (
-  <a
-    href={href}
-    target="_blank"
-    rel="noopener noreferrer"
-    className="text-gray-400 hover:text-white transition-colors"
+  <button
+    type="button"
+    className="text-gray-400 hover:text-white transition-colors cursor-pointer"
     aria-label={label}
-    onClick={(e) => e.stopPropagation()}
+    onClick={(e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      window.open(href, '_blank', 'noopener,noreferrer');
+    }}
   >
     {children}
-  </a>
+  </button>
 );
 
 const cardClasses = "w-full bg-neutral-900 border border-neutral-800 rounded-2xl shadow-[0px_0px_0px_1px_rgba(0,0,0,0.06),0px_1px_1px_-0.5px_rgba(0,0,0,0.06),0px_3px_3px_-1.5px_rgba(0,0,0,0.06),_0px_6px_6px_-3px_rgba(0,0,0,0.06),0px_12px_12px_-6px_rgba(0,0,0,0.06),0px_24px_24px_-12px_rgba(0,0,0,0.06)] p-6 flex flex-col gap-4 transition-transform duration-300 ease-in-out hover:scale-105 hover:shadow-lg";

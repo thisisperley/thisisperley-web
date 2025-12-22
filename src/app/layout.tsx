@@ -36,9 +36,6 @@ export const metadata: Metadata = {
   },
   alternates: {
     canonical: "https://thisisperley.com",
-    types: {
-      "application/rss+xml": "https://thisisperley.com/rss.xml",
-    },
   },
   robots: {
     index: true,
@@ -83,6 +80,8 @@ export default function RootLayout({
           href="/images/perley-web-header-v6.webp"
           type="image/webp"
         />
+        <link rel="preconnect" href="https://img.youtube.com" />
+        <link rel="preconnect" href="https://www.youtube.com" />
       </head>
       <body className="min-h-screen bg-background font-sans antialiased flex flex-col">
         <ClientThemeLayout>{children}</ClientThemeLayout>

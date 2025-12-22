@@ -4,7 +4,7 @@ import { notFound } from "next/navigation";
 import { albums, type Album } from "@/data/musicData";
 import { Inter } from "next/font/google";
 import type { Metadata } from "next";
-import { JsonLd } from "@/components/seo/JsonLd";
+import { JsonLd, BreadcrumbJsonLd } from "@/components/seo/JsonLd";
 
 const inter = Inter({ subsets: ["latin"], weight: ["400", "600", "700"], variable: "--font-inter" });
 
@@ -39,8 +39,8 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
         {
           url: imageUrl,
           width: 1200,
-          height: 1200,
-          alt: `${album.title} by Perley - Album Cover`,
+          height: 630,
+          alt: `${album.title} by Perley`,
         },
       ],
       siteName: "Perley",
@@ -154,6 +154,12 @@ export default async function AlbumPage({ params }: { params: Promise<{ slug: st
   return (
     <div className={`min-h-screen bg-black text-white ${inter.variable}`}>
       <JsonLd data={musicRecordingJsonLd} />
+      <BreadcrumbJsonLd
+        items={[
+          { name: "Home", url: "https://thisisperley.com" },
+          { name: album.title, url: `https://thisisperley.com/${album.slug}` },
+        ]}
+      />
       {/* Header with Perley logo */}
       <header className="p-6 flex justify-center">
         <Link href="/" className="hover:opacity-80 transition-opacity">
