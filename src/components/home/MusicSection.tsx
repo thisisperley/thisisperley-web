@@ -1,5 +1,3 @@
-"use client";
-
 import { albums } from "@/data/musicData";
 import { TrackCard } from "./TrackCard";
 

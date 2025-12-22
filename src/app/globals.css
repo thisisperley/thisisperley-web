@@ -1,8 +1,19 @@
 @import "tailwindcss";
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+/* BlobEffect keyframes */
+@keyframes blob-morph {
+  0% { border-radius: 48% 52% 57% 43% / 44% 57% 43% 56%; }
+  25% { border-radius: 63% 37% 57% 43% / 55% 48% 52% 45%; }
+  50% { border-radius: 40% 60% 43% 57% / 52% 32% 68% 48%; }
+  75% { border-radius: 54% 46% 38% 62% / 49% 70% 30% 51%; }
+  100% { border-radius: 48% 52% 57% 43% / 44% 57% 43% 56%; }
+}
+
+@keyframes blob-hue-rotate {
+  0% { filter: blur(var(--blob-blur)) hue-rotate(0deg); }
+  50% { filter: blur(var(--blob-blur-min)) hue-rotate(180deg); }
+  100% { filter: blur(var(--blob-blur)) hue-rotate(360deg); }
+}
 
 @layer base {
   :root {

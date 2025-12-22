@@ -73,49 +73,10 @@ const BlobEffect = ({
 
     document.addEventListener("mousemove", handleMouseMove);
 
-    // Calculate blur values with fallbacks
-    const blur1 = blurAmount.blob1 ?? 100;
-    const blur2 = blurAmount.blob2 ?? 80;
-    const blur3 = blurAmount.blob3 ?? 60;
-
-    // Add keyframes for hue rotation
-    const style = document.createElement("style");
-    style.textContent = `
-      @keyframes morph {
-        0% { border-radius: 48% 52% 57% 43% / 44% 57% 43% 56%; }
-        25% { border-radius: 63% 37% 57% 43% / 55% 48% 52% 45%; }
-        50% { border-radius: 40% 60% 43% 57% / 52% 32% 68% 48%; }
-        75% { border-radius: 54% 46% 38% 62% / 49% 70% 30% 51%; }
-        100% { border-radius: 48% 52% 57% 43% / 44% 57% 43% 56%; }
-      }
-      
-      @keyframes hue-rotate1 {
-        0% { filter: blur(${blur1}px) hue-rotate(0deg); }
-        50% { filter: blur(${blur1 - 10}px) hue-rotate(180deg); }
-        100% { filter: blur(${blur1}px) hue-rotate(360deg); }
-      }
-      
-      @keyframes hue-rotate2 {
-        0% { filter: blur(${blur2}px) hue-rotate(0deg); }
-        50% { filter: blur(${blur2 - 10}px) hue-rotate(180deg); }
-        100% { filter: blur(${blur2}px) hue-rotate(360deg); }
-      }
-      
-      @keyframes hue-rotate3 {
-        0% { filter: blur(${blur3}px) hue-rotate(0deg); }
-        50% { filter: blur(${blur3 - 10}px) hue-rotate(180deg); }
-        100% { filter: blur(${blur3}px) hue-rotate(360deg); }
-      }
-    `;
-    document.head.appendChild(style);
-
     return () => {
       document.removeEventListener("mousemove", handleMouseMove);
-      if (style && style.parentNode) {
-        style.parentNode.removeChild(style);
-      }
     };
-  }, [blurAmount, throttleAmount]);
+  }, [throttleAmount]);
 
   // Safe access to all potential undefined properties
   const width1 = sizes?.blob1 ?? 400;
@@ -141,9 +102,11 @@ const BlobEffect = ({
         className
       )}
     >
-      <div 
+      <div
         className="absolute"
         style={{
+          "--blob-blur": `${blur1}px`,
+          "--blob-blur-min": `${blur1 - 10}px`,
           width: `${width1}px`,
           height: `${height1}px`,
           left: "var(--mouse-x)",
@@ -154,13 +117,15 @@ const BlobEffect = ({
           filter: `blur(${blur1}px)`,
           pointerEvents: "none",
           mixBlendMode: "screen",
-          animation: "morph 8s ease-in-out infinite, hue-rotate1 10s linear infinite",
+          animation: "blob-morph 8s ease-in-out infinite, blob-hue-rotate 10s linear infinite",
           transition: "left 0.6s cubic-bezier(0.22, 1, 0.36, 1), top 0.6s cubic-bezier(0.22, 1, 0.36, 1)"
-        }}
+        } as React.CSSProperties}
       />
-      <div 
+      <div
         className="absolute"
         style={{
+          "--blob-blur": `${blur2}px`,
+          "--blob-blur-min": `${blur2 - 10}px`,
           width: `${width2}px`,
           height: `${height2}px`,
           left: "var(--mouse-x)",
@@ -171,13 +136,15 @@ const BlobEffect = ({
           filter: `blur(${blur2}px)`,
           pointerEvents: "none",
           mixBlendMode: "screen",
-          animation: "morph 8s ease-in-out infinite -2s, hue-rotate2 12s linear infinite",
+          animation: "blob-morph 8s ease-in-out infinite -2s, blob-hue-rotate 12s linear infinite",
           transition: "left 1s cubic-bezier(0.22, 1, 0.36, 1), top 1s cubic-bezier(0.22, 1, 0.36, 1)"
-        }}
+        } as React.CSSProperties}
       />
-      <div 
+      <div
         className="absolute"
         style={{
+          "--blob-blur": `${blur3}px`,
+          "--blob-blur-min": `${blur3 - 10}px`,
           width: `${width3}px`,
           height: `${height3}px`,
           left: "var(--mouse-x)",
@@ -188,9 +155,9 @@ const BlobEffect = ({
           filter: `blur(${blur3}px)`,
           pointerEvents: "none",
           mixBlendMode: "screen",
-          animation: "morph 8s ease-in-out infinite -4s, hue-rotate3 14s linear infinite",
+          animation: "blob-morph 8s ease-in-out infinite -4s, blob-hue-rotate 14s linear infinite",
           transition: "left 1.4s cubic-bezier(0.22, 1, 0.36, 1), top 1.4s cubic-bezier(0.22, 1, 0.36, 1)"
-        }}
+        } as React.CSSProperties}
       />
     </div>
   );

@@ -19,11 +19,9 @@ const ThemeContext = createContext<ThemeContextType>(defaultThemeContextValue);
 
 export function ThemeProvider({ children }: { children: React.ReactNode }) {
   const [theme, setTheme] = useState<Theme>("theme-a");
-  const [mounted, setMounted] = useState(false);
 
-  // When mounted on client, now we can show the UI
+  // Load saved theme from localStorage on mount
   useEffect(() => {
-    setMounted(true);
     const savedTheme = localStorage.getItem("theme") as Theme;
     if (savedTheme && ["theme-a", "theme-b", "theme-c"].includes(savedTheme)) {
       setTheme(savedTheme);
@@ -35,11 +33,6 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
     localStorage.setItem("theme", newTheme);
   };
 
-  // Avoid hydration mismatch
-  if (!mounted) {
-    return <>{children}</>;
-  }
-
   return (
     <ThemeContext.Provider
       value={{
@@ -47,7 +40,12 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
         setTheme: handleThemeChange,
       }}
     >
-      <div className={`${theme} transition-colors duration-300`}>{children}</div>
+      <div
+        className={`${theme} transition-colors duration-300`}
+        suppressHydrationWarning
+      >
+        {children}
+      </div>
     </ThemeContext.Provider>
   );
 }
