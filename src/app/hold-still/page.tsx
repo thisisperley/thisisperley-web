@@ -48,7 +48,7 @@ export const metadata: Metadata = {
 };
 
 export default function HoldStillPage() {
-  const holdStillAlbum = albums.find(album => album.title === "Hold Still");
+  const holdStillAlbum = albums.find(album => album.slug === "hold-still");
 
   if (!holdStillAlbum) {
     return <div>Album not found</div>;

@@ -1,6 +1,26 @@
-export const albums = [
+export interface AlbumLinks {
+  spotify?: string;
+  bandcamp?: string;
+  tidal?: string;
+  youtubemusic?: string;
+  amazon?: string;
+  applemusic?: string;
+  iheartradio?: string;
+}
+
+export interface Album {
+  title: string;
+  slug: string;
+  year: string;
+  cover: string;
+  released: boolean;
+  links: AlbumLinks;
+}
+
+export const albums: Album[] = [
   {
     title: "Hold Still",
+    slug: "hold-still",
     year: "2025",
     cover: "/images/perley-single-hold-still.webp",
     released: true,
@@ -14,31 +34,28 @@ export const albums = [
     }
   },
   {
-    title: "Unknown #1",
+    title: "Holidark",
+    slug: "holidark",
     year: "2025",
-    cover: "/images/perley-single-placeholder-1.webp",
-    released: false,
+    cover: "/images/perley-single-holidark.webp",
+    released: true,
     links: {
-      spotify: "",
+      spotify: "https://open.spotify.com/album/5xt8fvRoqJqJlXiC6P0ewU",
       bandcamp: "https://perley.bandcamp.com/",
-      tidal: "",
-      youtubemusic: "",
-      amazon: "",
-      iheartradio: ""
+      tidal: "https://tidal.com/album/483462734/track/483462735",
+      youtubemusic: "https://music.youtube.com/watch?v=bpxhpxhiFGw",
+      amazon: "https://music.amazon.com/albums/B0G9B5FPCF",
+      applemusic: "https://music.apple.com/us/album/holidark-single/1862983052"
     }
   },
   {
     title: "Unknown #2",
+    slug: "unknown-2",
     year: "2025",
-    cover: "/images/perley-single-placeholder-2.webp",
+    cover: "/images/perley-single-placeholder-1.webp",
     released: false,
     links: {
-      spotify: "",
-      bandcamp: "https://perley.bandcamp.com/",
-      tidal: "",
-      youtubemusic: "",
-      amazon: "",
-      iheartradio: ""
+      bandcamp: "https://perley.bandcamp.com/"
     }
   },
 ]; 
