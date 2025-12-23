@@ -130,12 +130,22 @@ function CardContent({ album }: { album: Album }) {
 }
 
 export const TrackCard = ({ album }: TrackCardProps) => {
+  const handleCardClick = () => {
+    if (typeof window !== "undefined" && window.umami) {
+      window.umami.track("album-card-click", {
+        album: album.title,
+        year: album.year,
+      });
+    }
+  };
+
   if (album.released) {
     return (
       <Link
         href={`/${album.slug}`}
         className={`${cardClasses} block cursor-pointer`}
         aria-label={`View ${album.title} by Perley`}
+        onClick={handleCardClick}
       >
         <CardContent album={album} />
       </Link>

@@ -2,6 +2,7 @@
 
 import { Inter } from 'next/font/google';
 import { upcomingEvent } from '@/data/eventData';
+import { TrackedLink } from '@/components/ui/TrackedLink';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -32,14 +33,20 @@ export const EventSection = () => {
             {upcomingEvent.description}
           </p>
           {upcomingEvent.link && (
-            <a
+            <TrackedLink
               href={upcomingEvent.link.url}
+              eventName="event-cta-click"
+              eventData={{
+                event: upcomingEvent.title,
+                date: upcomingEvent.date,
+                location: upcomingEvent.location
+              }}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center bg-white/10 hover:bg-white/20 border border-white/30 hover:border-white/40 text-white font-medium py-2 px-4 rounded-md transition-all duration-200 text-sm sm:text-base"
             >
               {upcomingEvent.link.label}
-            </a>
+            </TrackedLink>
           )}
         </div>
       </div>

@@ -15,6 +15,13 @@ export const VideoSection = () => {
   const videoId = visibleVideos[0]?.id || '';
 
   const handleVideoClick = () => {
+    // Track video play with Umami
+    if (typeof window !== "undefined" && window.umami) {
+      window.umami.track("video-play", {
+        title: visibleVideos[0]?.title || "Unknown",
+        videoId: videoId,
+      });
+    }
     setIsPlaying(true);
   };
 
