@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { notFound } from "next/navigation";
-import { albums, type Album } from "@/data/musicData";
+import { albums } from "@/data/musicData";
 import { Inter } from "next/font/google";
 import type { Metadata } from "next";
 import { JsonLd, BreadcrumbJsonLd } from "@/components/seo/JsonLd";
