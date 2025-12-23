@@ -1,6 +1,6 @@
 "use client";
 
-import { Button } from "@/components/ui/Button";
+import { TrackedLink } from "@/components/ui/TrackedLink";
 import { tourDates } from "@/data/tourData";
 
 export const TourSection = () => {
@@ -22,20 +22,29 @@ export const TourSection = () => {
                   <p className="text-gray-600">{tour.venue}</p>
                 </div>
               </div>
-              <Button 
-                className="border-2 border-red-600 bg-transparent text-red-600 hover:bg-red-600 hover:text-white transition-colors"
+              <TrackedLink
+                href={tour.link}
+                eventName="tour-ticket-click"
+                eventData={{ venue: tour.venue, city: tour.city, date: tour.date }}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center px-6 py-2 border-2 border-red-600 bg-transparent text-red-600 hover:bg-red-600 hover:text-white transition-colors rounded-md text-sm font-medium"
               >
-                <a href={tour.link} className="px-6 py-2">GET TICKETS</a>
-              </Button>
+                GET TICKETS
+              </TrackedLink>
             </div>
           ))}
         </div>
         
         <div className="mt-16 text-center">
           <p className="text-xl text-gray-700 mb-4">Don&apos;t see your city?</p>
-          <Button size="lg" className="bg-red-600 hover:bg-red-700">
-            <a href="#" className="text-white px-6 py-3 text-lg">VIEW ALL DATES</a>
-          </Button>
+          <TrackedLink
+            href="#"
+            eventName="tour-view-all-click"
+            className="inline-flex items-center justify-center h-11 px-8 rounded-md bg-red-600 hover:bg-red-700 text-white text-lg font-medium transition-colors"
+          >
+            VIEW ALL DATES
+          </TrackedLink>
         </div>
       </div>
     </section>

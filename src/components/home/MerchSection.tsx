@@ -1,6 +1,7 @@
 "use client";
 
-import { Button } from "@/components/ui/Button";
+import { TrackedButton } from "@/components/ui/TrackedButton";
+import { TrackedLink } from "@/components/ui/TrackedLink";
 import { merchItems, merchContent } from "@/data/merchData";
 
 export const MerchSection = () => {
@@ -20,9 +21,13 @@ export const MerchSection = () => {
                   <span className="text-gray-700 font-medium">{item.name}</span>
                 </div>
                 <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                  <Button className="bg-red-600 hover:bg-red-700 text-white">
+                  <TrackedButton
+                    eventName="merch-item-click"
+                    eventData={{ item: item.name, price: item.price }}
+                    className="bg-red-600 hover:bg-red-700 text-white"
+                  >
                     SHOP NOW
-                  </Button>
+                  </TrackedButton>
                 </div>
               </div>
               <h3 className="text-lg font-bold text-gray-900">{item.name}</h3>
@@ -32,9 +37,15 @@ export const MerchSection = () => {
         </div>
         
         <div className="mt-16 text-center">
-          <Button size="lg" className="bg-red-600 hover:bg-red-700">
-            <a href={merchContent.ctaLink} className="text-white px-6 py-3 text-lg">{merchContent.ctaText}</a>
-          </Button>
+          <TrackedLink
+            href={merchContent.ctaLink}
+            eventName="merch-store-click"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center justify-center h-11 px-8 rounded-md bg-red-600 hover:bg-red-700 text-white text-lg font-medium transition-colors"
+          >
+            {merchContent.ctaText}
+          </TrackedLink>
         </div>
       </div>
     </section>
