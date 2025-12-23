@@ -44,7 +44,7 @@ export const albums: Album[] = [
     released: true,
     links: {
       spotify: "https://open.spotify.com/album/5xt8fvRoqJqJlXiC6P0ewU",
-      bandcamp: "https://perley.bandcamp.com/",
+      bandcamp: "https://perley.bandcamp.com/track/holidark",
       tidal: "https://tidal.com/album/483462734/track/483462735",
       youtubemusic: "https://music.youtube.com/watch?v=bpxhpxhiFGw",
       amazon: "https://music.amazon.com/albums/B0G9B5FPCF",
