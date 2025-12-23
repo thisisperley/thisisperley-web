@@ -41,6 +41,53 @@ The project is configured via `next.config.ts`:
 - **Theme System**: Built-in theming with CSS custom properties
 - **SEO Optimization**: Comprehensive metadata, JSON-LD, sitemap, and robots.txt
 - **Static Content Management**: Content stored in TypeScript files in `src/data/`
+- **Umami Analytics**: Privacy-focused analytics with custom event tracking
+
+### Analytics (Umami)
+
+The site uses Umami Cloud for privacy-focused analytics. The implementation consists of:
+
+**Configuration:**
+- Script loaded in `src/app/layout.tsx` via Next.js `Script` component
+- TypeScript definitions in `src/types/umami.d.ts`
+
+**Tracking Components:**
+- `src/components/ui/TrackedLink.tsx` - Anchor wrapper with click tracking
+- `src/components/ui/TrackedButton.tsx` - Button wrapper with click tracking
+- `src/app/[slug]/TrackedStreamingLink.tsx` - Streaming link component for album pages
+
+**Tracked Events:**
+| Event | Component | Data |
+|-------|-----------|------|
+| `streaming-click` | TrackCard | platform, album |
+| `album-streaming-click` | TrackedStreamingLink | platform, album |
+| `album-card-click` | TrackCard | album, year |
+| `video-play` | VideoSection | title, videoId |
+| `event-cta-click` | EventSection | event, date, location |
+| `tour-ticket-click` | TourSection | venue, city, date |
+| `merch-item-click` | MerchSection | item, price |
+| `merch-store-click` | MerchSection | — |
+| `social-click` | Footer | platform |
+| `external-link` | Footer | destination |
+
+**Adding New Tracking:**
+```tsx
+// Using TrackedLink
+<TrackedLink
+  href="/destination"
+  eventName="my-event"
+  eventData={{ key: "value" }}
+>
+  Link Text
+</TrackedLink>
+
+// Using direct tracking
+if (window.umami) {
+  window.umami.track("event-name", { key: "value" });
+}
+```
+
+See `docs/umami-analytics.md` for comprehensive documentation.
 
 ### Deployment
 - **Vercel**: Automated deployment on push to main branch

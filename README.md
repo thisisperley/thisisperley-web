@@ -12,6 +12,7 @@ A modern, performant, and SEO-optimized Next.js website for the Toronto based in
 - **Accessible**: Semantic HTML, ARIA attributes, keyboard navigation support
 - **CI/CD**: Automated deployment via Vercel
 - **Interactive UI**: Mouse-following blob effect for enhanced visual experience
+- **Analytics**: Privacy-focused Umami Cloud analytics with custom event tracking
 
 ## Getting Started
 
@@ -113,6 +114,34 @@ Update the content by modifying:
 - Static content in `src/data/`
 - Metadata in `src/app/metadata.ts`
 - SEO components in `src/components/seo/`
+
+### Analytics
+
+The site uses [Umami Cloud](https://umami.is/) for privacy-focused analytics. Key features:
+
+- **Automatic Page Tracking**: All page views are tracked automatically
+- **Custom Event Tracking**: User interactions are tracked via reusable components
+- **Privacy-First**: GDPR compliant, no cookies, no personal data collection
+
+#### Tracked Events
+
+| Event | Description |
+|-------|-------------|
+| `streaming-click` | Clicks on streaming platform icons (homepage) |
+| `album-streaming-click` | Clicks on streaming links (album pages) |
+| `album-card-click` | Clicks on album cards to view details |
+| `video-play` | Video play button clicks |
+| `event-cta-click` | Event/show ticket link clicks |
+| `tour-ticket-click` | Tour ticket purchases |
+| `merch-item-click` | Merchandise item interactions |
+| `social-click` | Social media link clicks |
+
+#### Tracking Components
+
+- `TrackedLink` - Link component with automatic click tracking
+- `TrackedButton` - Button component with automatic click tracking
+
+See [docs/umami-analytics.md](docs/umami-analytics.md) for detailed implementation guide.
 
 ## Deployment
 
