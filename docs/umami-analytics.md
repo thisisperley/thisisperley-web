@@ -108,32 +108,6 @@ import { TrackedLink } from "@/components/ui/TrackedLink";
 | `href` | `string` | Yes | Link destination |
 | ...rest | `AnchorHTMLAttributes` | No | Standard anchor props |
 
-#### TrackedButton
-
-Location: `src/components/ui/TrackedButton.tsx`
-
-A button component that automatically tracks clicks:
-
-```tsx
-import { TrackedButton } from "@/components/ui/TrackedButton";
-
-<TrackedButton
-  eventName="newsletter-signup"
-  eventData={{ source: "modal" }}
-  variant="default"
-  onClick={handleSubmit}
->
-  Subscribe
-</TrackedButton>
-```
-
-**Props:**
-| Prop | Type | Required | Description |
-|------|------|----------|-------------|
-| `eventName` | `string` | Yes | The event name to track |
-| `eventData` | `Record<string, string \| number \| boolean>` | No | Additional data to send |
-| ...rest | `ButtonProps` | No | Standard button props |
-
 #### TrackedStreamingLink
 
 Location: `src/app/[slug]/TrackedStreamingLink.tsx`
@@ -178,10 +152,6 @@ const handleAction = () => {
 | `album-card-click` | TrackCard | `album`, `year` | Album card navigation clicks |
 | `video-play` | VideoSection | `title`, `videoId` | Video play button clicks |
 | `event-cta-click` | EventSection | `event`, `date`, `location` | Event/show CTA clicks |
-| `tour-ticket-click` | TourSection | `venue`, `city`, `date` | Tour ticket link clicks |
-| `tour-view-all-click` | TourSection | — | "View All Dates" button clicks |
-| `merch-item-click` | MerchSection | `item`, `price` | Merchandise item clicks |
-| `merch-store-click` | MerchSection | — | "Shop Now" store link clicks |
 | `social-click` | Footer | `platform` | Social media link clicks |
 | `external-link` | Footer | `destination` | External website link clicks |
 

@@ -29,7 +29,7 @@ The project is configured via `next.config.ts`:
 - **Inter font** from Google Fonts
 
 ### Component Structure
-- `src/components/home/` - Homepage sections (Hero, Music, Tour, etc.)
+- `src/components/home/` - Homepage sections (Hero, Music, About, Video, Event)
 - `src/components/layout/` - Layout components including ClientThemeLayout
 - `src/components/ui/` - Reusable UI components including BlobEffect
 - `src/components/seo/` - SEO-related components like JsonLd
@@ -53,7 +53,6 @@ The site uses Umami Cloud for privacy-focused analytics. The implementation cons
 
 **Tracking Components:**
 - `src/components/ui/TrackedLink.tsx` - Anchor wrapper with click tracking
-- `src/components/ui/TrackedButton.tsx` - Button wrapper with click tracking
 - `src/app/[slug]/TrackedStreamingLink.tsx` - Streaming link component for album pages
 
 **Tracked Events:**
@@ -64,9 +63,6 @@ The site uses Umami Cloud for privacy-focused analytics. The implementation cons
 | `album-card-click` | TrackCard | album, year |
 | `video-play` | VideoSection | title, videoId |
 | `event-cta-click` | EventSection | event, date, location |
-| `tour-ticket-click` | TourSection | venue, city, date |
-| `merch-item-click` | MerchSection | item, price |
-| `merch-store-click` | MerchSection | — |
 | `social-click` | Footer | platform |
 | `external-link` | Footer | destination |
 
@@ -103,9 +99,8 @@ See `docs/umami-analytics.md` for comprehensive documentation.
 All content is managed through TypeScript files in `src/data/`:
 - `aboutData.ts` - About section content
 - `musicData.ts` - Music/discography data
-- `tourData.ts` - Tour dates and venues
-- `merchData.ts` - Merchandise information
 - `videos.ts` - Video content data
+- `eventData.ts` - Event/show information
 
 ### Styling Approach
 - Uses TailwindCSS 4 with modern CSS features
