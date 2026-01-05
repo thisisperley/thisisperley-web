@@ -1,3 +1,5 @@
+"use client";
+
 import { TrackedLink } from "@/components/ui/TrackedLink";
 
 const socialLinks = [
