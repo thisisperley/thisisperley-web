@@ -58,6 +58,14 @@ export const Footer = () => {
       <div className="container mx-auto px-4 py-16 relative">
         <div className="flex flex-col items-center">
           <h2 className="inline-block text-3xl font-bold mb-8 tracking-wide bg-[#232323] px-4 py-2">perley</h2>
+          <TrackedLink
+            href="mailto:band@thisisperley.com"
+            eventName="email-click"
+            eventData={{ destination: "band-email" }}
+            className="inline-block text-3xl font-bold mb-8 tracking-wide bg-[#232323] px-4 py-2 hover:text-red-500 transition-colors duration-300"
+          >
+            band@thisisperley.com
+          </TrackedLink>
           
           <div className="text-center text-white max-w-xl mb-8">
             <p className="inline-block mb-2 bg-[#232323] px-3 py-1">A rockin&apos; band of the highest order pretty much. ™</p>
